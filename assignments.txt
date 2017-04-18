@@ -1,0 +1,33 @@
+sris-Air:DojoAssignments owner$ ls -R
+IOS		Python		WebFundamentals
+MEAN		Ruby		netCore
+
+./IOS:
+about.txt
+
+./MEAN:
+about.txt
+
+./Python:
+about.txt
+
+./Ruby:
+about.txt
+
+./WebFundamentals:
+CSS		Git		HTML		Javascript	about.txt
+
+./WebFundamentals/CSS:
+about.txt
+
+./WebFundamentals/Git:
+about.txt
+
+./WebFundamentals/HTML:
+about.txt		indentation.html
+
+./WebFundamentals/Javascript:
+about.txt
+
+./netCore:
+about.txt
