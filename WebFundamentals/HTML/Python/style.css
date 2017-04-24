@@ -3,12 +3,42 @@
     padding:0px;
 }
 
+header span a{
+    display: inline-block;
+}
+
+.search-box{
+    width:200px;
+    height:45px;
+    padding: 10px;
+    display: inline-block;
+    background-color: #444444;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #483d8b;
+    position: relative;
+    bottom: 60px;
+    left: 150px;
+}
+
+.search{
+    margin:12px;
+    height: 75px;
+}
+.position-text{
+    position: relative;
+    left: 400px;
+    bottom: 5px;
+}
+
+.text-color{
+    color: red;
+}
+
 .container{
     margin:0px;
-    padding:20px;
     width: 900px;
-    height: 700px;
-    font-family: Arial;
+    height: auto;
+    font-family: sans-serif;
 
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#145274+0,2989d8+100,207cca+100,19709f+100,19709f+100,19709f+101 */
     background: #145274; /* Old browsers */
@@ -18,6 +48,8 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#145274', endColorstr='#19709f',GradientType=0 ); /* IE6-9 */
 
 }
+.container p{position: relative;left:575px;top: 20px;font-size: 12px;color: #FFFFFF;}
+.container p a{color: red;}
 
 .menu{
     width: 700px;
@@ -26,54 +58,68 @@
     margin:0px;
     padding:0px;
     font-size: 20px;
-
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 5px;
-    overflow: hidden;
-    background-color: #3772A2;
-    border-radius: 15px;
 }
 
-li {
-    float: left;
+.menu ul {list-style-type: none;margin: 0;padding: 5px;overflow: hidden;background-color: #3772A2;border-radius: 15px;box-shadow: 5px 5px 5px #483d8b;}
+.menu ul li {float: left;}
+.menu ul li a {display: block;color: white;text-align: center;padding: 14px 16px;text-decoration: none;}
+
+.wrapper{
+    margin:0;
+    padding: 20px;
+    width: 950px;
+    display: flex;
 }
 
-li a {
-    display: block;
-    color: white;
+.left-side{
+    width: 300px;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    color: #FFF;
 }
+.left-side ul{width: 300px;list-style-type: none;padding: 10px;}
+.left-side ul li{padding: 10px;}
+.left-side ul li a{text-align: center;}
 
-.wrapper{}
-
-.left-side{}
-
-.right-side{}
+.right-side{
+    width: 480px;
+    margin-top: 20px;
+    height: auto;
+    color: #FFF;
+    text-align: center;
+}
 
 .center{
     width: 900px;
     background-color: #FFFFFF;
 }
+.right-side ul{margin: 20px;width: 450px;text-align: center;font-size: 13px;}
+.right-side ul li{padding: 5px;list-style-type: none;}
+.right-side ul li a{color: orange;}
+.right-side span{color: #FFF;font-size: 13px;padding-top: 20px;}
+
+.center{display: flex;}
 
 .content{
     text-align: center;
-    width: 400px;
+    width: auto;
     margin: 10px;
+    padding: 10px;
+    font-size: 12px;
 }
 
-.left-center{
-    height: 500px;
-    background-color: yellow;
-}
+.content hr{position: relative; left: 60px;width:250px;height: 4px;background-color: purple;margin: 10px;}
+.content span{margin:10px; padding: 10px;}
+.content ul{width: 200px;margin:auto;padding: 5px;}
+.content ul li{padding: 5px; list-style-type: square;}
 
-.right-center{
-    background-color: red;
-    height: 500px;
-}
+.footer{
+    width: 900px;
+    height: 80px;
+    font-size: 12px;
+    vertical-align: middle;
 
-.footer{}
+}
+.footer ul{margin:10px;position: relative;top:30px;left: 125px}
+.footer ul li{text-decoration: none;display: inline;}
+.footer ul li a{color: #8DEEEE;padding:0px 30px;text-decoration: none;}
+.footer span{position: relative;top:30px;left: 350px;margin:auto;color: #8DEEEE;}
