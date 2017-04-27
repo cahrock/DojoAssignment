@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <title>JQuery</title>
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                // hide
+                $( "#hideMe" ).click(function() {
+                      $( "#first_hideMe" ).hide('slow');
+                });
+
+                // Show
+                $('#showMe').click(function(){
+                    $('#first_hideMe').show('slow');
+                })
+                // Toggle
+                $('#toggleMe').click(function(){
+                    $('#first_toggleMe').toggle('slow');
+                })
+
+                $('#slideDown').click(function(){
+                    $( "#first_slideDown" ).is( ":hidden" );
+                    $( '#first_slideDown' ).slideDown( "slow" );
+                })
+
+                $('#slideUp').click(function(){
+                    $( '#first_slideDown' ).slideUp( "slow" );
+                })
+                $('#slideToggle').click(function(){
+                    $('#slide_toggle').slideToggle('slow');
+                })
+                $('#fadeIn').click(function(){
+                    $('.fadeinout').fadeIn('slow');
+                })
+                $('#fadeOut').click(function(){
+                    $('.fadeinout').fadeOut('slow');
+                })
+                $('#btn_addClass').click(function(){
+                    $('#pAddClass').addClass('red');
+                })
+                $('#btn_before').click(function(){
+                    $('#beforeAfter').before('<p>This is before the "p" element</p></br>')
+                })
+                $('#btn_after').click(function(){
+                    $('#beforeAfter').after('</br><p>This text is after the "p" element</p>');
+                })
+                $('#btn_append').click(function(){
+                    $('#appendMethod').append('<strong> & append </strong> method...');
+                })
+                $('#btn_html').click(function(){
+                    $('#htmlChange').html('<span>Now <b>HTML</b></span>');
+                })
+                $('#btn_attr').click(function(){
+                    $('img').attr('width', '500');
+                })
+                $('#btn_val').click(function(){
+                    $('input:text').val('Some text inserted...');
+                });
+                $('#btn_text').click(function(){
+                    $( '#textChange' ).text( "This is new text." );
+                });
+
+                var newObject = new Object();
+                newObject.getWeather = 'beautiful day.. :)'
+                $('#btn_data1').click(function(){
+                    $('#textData').data(newObject);
+                })
+                $('#btn_data2').click(function(){
+                    alert($('#textData').data('getWeather'));
+                })
+            });
+        </script>
+
+    </head>
+
+
+
+
+    <body>
+
+        <div class="container">
+            <div class="box">
+                <span><h1 id="first_hideMe">Hide Me..!</h1></span>
+                <br>
+                <span>Click the button to hide and show.</span><br>
+
+                <button id="hideMe">Hide Me</button> &nbsp &nbsp
+                <button id="showMe">Show Me</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>Toggle and Slide Toggle..!</h1></span>
+                <br>
+                <p id="first_toggleMe">Click the button to toggle the text.</p><br>
+                <p id="slide_toggle">Lorem ipsum dolor sit amet, ad vel liber audiam alterum, atqui sanctus ex per, mazim oratio patrioque vix ea. At qui cibo patrioque, graece voluptatum persequeris an vis. Te cum tritani persius, has autem imperdiet ei, ei mel sadipscing cotidieque. His dolorem minimum explicari ut.
+                    Et sit tollit malorum nostrum, ad mel sint blandit, vim eu dicant aliquando.</p>
+                <button id="toggleMe">Toggle</button> &nbsp &nbsp
+                <button id="slideToggle">Slide Toggle</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>Slidedown & Slideup..!</h1></span>
+                <br>
+                <p>Click the button to slidedown the text.</p><br>
+                <p id="first_slideDown">I am sliding down..!</p><br>
+                <button id="slideDown">Slidedown</button> &nbsp &nbsp
+                <button id="slideUp">Slideup</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>Fadein & Fadeout..!</h1></span>
+                <br>
+                <p>Click the button to fadein / out the box.</p><br>
+                <div class="fadeinout">
+
+                </div>
+
+                <button id="fadeIn">Fadein</button> &nbsp &nbsp
+                <button id="fadeOut">Fadeout</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>addClass..!</h1></span>
+                <br>
+                <p id="pAddClass">Click the button to add class.</p><br>
+                <button id="btn_addClass">Add Class</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>Before, After & Append</h1></span>
+                <br>
+                <p>Click the button to before(), after()</p><br>
+                <p id="beforeAfter">Lorem ipsum dolor sit amet, ad vel liber audiam alterum,
+                    atqui sanctus ex per, mazim oratio patrioque vix ea.</p>
+
+                <button id="btn_before">Before</button> &nbsp &nbsp
+                <button id="btn_after">After</button> &nbsp &nbsp
+                <button id="btn_append">Append</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>HTML..!</h1></span>
+                <br>
+                <p>Click the button .</p><br>
+                <p id="htmlChange">Lorem ipsum dolor sit amet, ad vel liber audiam alterum,
+                    atqui sanctus ex per, mazim oratio patrioque vix ea.</p>
+                <button id="btn_html">HTML</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>jQuery atrr()..!</h1></span>
+                <br>
+                <p>Click the button to change the attribute.</p><br>
+                <img src="img_PrimeRib.jpeg" alt="prime rib">
+                <button id="btn_attr">Attribute</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>jQuery val()..!</h1></span>
+                <br>
+                <p>Click the button to insert the value into the text field.</p><br>
+                <p>Value inserted: <input type="text" name="some_text"></p>
+                <button id="btn_val">Click here</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>jQuery text()..!</h1></span>
+                <br>
+                <p>Click the button to replace the paragraph.</p><br>
+                <p id="textChange">Lorem ipsum dolor sit amet, ad vel liber audiam alterum,
+                    atqui sanctus ex per, mazim oratio patrioque vix ea.</p>
+                <button id="btn_text">Click here</button>
+                <br>
+                <hr>
+            </div>
+            <div class="box">
+                <span><h1>jQuery data()..!</h1></span>
+                <br>
+                <p>Click the button to store & retrieve the data.</p><br>
+                <p>The weather for tomorrow is </p><span id="textData"></span>
+                <button id="btn_data1">1st Data stored</button> &nbsp &nbsp
+                <button id="btn_data2">2nd Data retrieved</button>
+                <br>
+                <hr>
+            </div>
+        </div>
+
+    </body>
+</html>

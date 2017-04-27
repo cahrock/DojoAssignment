@@ -1,0 +1,81 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    width: 900px;
+    height: auto;
+    padding: 150px;
+    background-color:#000000;
+    /*background-image: url('beach.jpg');*/
+    border: 5px solid #525252;
+    /*display: none;*/
+}
+
+
+.container img{
+    display: none;
+}
+.wrapper{
+    width: 500px;
+    height: auto;
+    margin:auto;
+    background-color: grey;
+    border: 2px solid #525252;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.selectWrapper{
+    width: 500px;
+    height: auto;
+    margin:auto;
+    background-color: grey;
+    border: 2px solid #525252;
+    padding: 20px;
+    display: inline-block;
+}
+.selectBox{
+    margin: auto;
+}
+.textArea{
+    width: 400px;
+    margin:auto;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.box{
+    background-color: #FFFFFF;
+    width: 150px;
+    height: 55px;
+    margin-bottom: 10px;
+}
+
+
+button{
+    background-color: #FFFFFF;
+    width: 150px;
+    height: 55px;
+    text-align: center;
+}
+
+#containerBeach{
+    width: 900px;
+    height: auto;
+    padding: 150px;
+    background-image: url('beach.jpg');
+    border: 5px solid #525252;
+    display: none;
+}
+#beachBox{
+    width: 150px;
+    height: auto;
+    margin:auto;
+    opacity: 0.5;
+    filter: Alpha(opacity=50); /* IE8 and earlier */
+    border: 2px solid #525252;
+    padding: 20px;
+    display: none;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Arena</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#btn1').click(function(){
+                    $('.container').css({'background-image': 'url(beach.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'});
+                    $('.wrapper').hide();
+                    $('#beachBox').show();
+                })
+
+                $('#btn1').hover(function(){
+                    $('.container').css({'background-image': 'url(beach.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'});
+
+                })
+
+                $('#btn2').click(function(){
+                    $('.container').css({'background-image': 'url(earth.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'});
+                    $('.wrapper').hide();
+                    $('#beachBox').show();
+                })
+
+                $('#btn2').hover(function(){
+                    $('.container').css({'background-image': 'url(earth.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'})
+                })
+                $('#btn3').click(function(){
+                    $('.container').css({'background-image': 'url(dojo.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'});
+                    $('.wrapper').hide();
+                    $('#beachBox').show();
+                })
+                $('#btn3').hover(function(){
+                    $('.container').css({'background-image': 'url(dojo.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'})
+                })
+                $('#btn4').click(function(){
+                    $('.container').css({'background-image': 'url(forest.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'});
+                    $('.wrapper').hide();
+                    $('#beachBox').show();
+                })
+                $('#btn4').hover(function(){
+                    $('.container').css({'background-image': 'url(forest.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'})
+                })
+                $('#btn5').click(function(){
+                    $('.container').css({'background-image': 'url(matrix.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'});
+                    $('.wrapper').hide();
+                    $('#beachBox').show();
+                })
+                $('#btn5').hover(function(){
+                    $('.container').css({'background-image': 'url(matrix.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'})
+                })
+                $('#btn6').click(function(){
+                    $('.container').css({'background-image': 'url(snow.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'});
+                    $('.wrapper').hide();
+                    $('#beachBox').show();
+                })
+                $('#btn6').hover(function(){
+                    $('.container').css({'background-image': 'url(snow.jpg)',
+                                    'background-repeat': 'no-repeat',
+                                    'background-size': 'cover'})
+                })
+
+
+                $('#selectOption').show(function(){
+                    var selectedOption = $('#selectOption option:selected');
+                    $('#player').html(selectedOption.val());
+                })
+
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrapper">
+                <div class="textArea">
+                    <p><h1>Select Arena</h1></p>
+                </div>
+
+                <div class="box" show-image="beach.jpg">
+                    <button  id="btn1" type="button" name="button">Beach</button>
+                </div>
+                <div class="box">
+                    <button id="btn2" type="button" name="button">Planet</button>
+                </div>
+                <div class="box">
+                    <button id="btn3" type="button" name="button">Dojo</button>
+                </div>
+                <div class="box">
+                    <button id="btn4" type="button" name="button">Forest</button>
+                </div>
+                <div class="box">
+                    <button id="btn5" type="button" name="button">Matrix</button>
+                </div>
+                <div class="box">
+                    <button id="btn6" type="button" name="button">Snow</button>
+                </div>
+
+            </div>
+            <div id="beachBox">
+                <select id="selectOption">
+                  <option value="donny">Donny</option>
+                  <option value="leo">Leo</option>
+                  <option value="mikey">Mikey</option>
+                  <option value="raphael">Raphael</option>
+                </select>
+                <select>
+                  <option value="donny">Donny</option>
+                  <option value="leo">Leo</option>
+                  <option value="mikey">Mikey</option>
+                  <option value="raphael">Raphael</option>
+                </select>
+            </div>
+
+        </div>
+        <div id="player">
+
+        </div>
+
+    </body>
+</html>

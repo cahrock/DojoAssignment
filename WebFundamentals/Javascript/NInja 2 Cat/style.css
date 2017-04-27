@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper{
+    width: 800px;
+    margin: auto;
+}
+
+.box{
+    width: 600px;
+    height: auto;
+    margin: auto;
+}
+
+ .img{
+     margin:auto;
+ }
