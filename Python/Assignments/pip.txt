@@ -1,0 +1,40 @@
+
+
+$ pip install Django
+Collecting Django
+  Downloading Django-1.11.1-py2.py3-none-any.whl (6.9MB)
+    100% |████████████████████████████████| 7.0MB 135kB/s
+Collecting pytz (from Django)
+  Downloading pytz-2017.2-py2.py3-none-any.whl (484kB)
+    100% |████████████████████████████████| 491kB 1.2MB/s
+Installing collected packages: pytz, Django
+Successfully installed Django-1.11.1 pytz-2017.2
+
+$ pip list
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+Django (1.11.1)
+pip (9.0.1)
+pytz (2017.2)
+setuptools (32.1.0)
+wheel (0.29.0)
+
+$ pip install Django
+Requirement already satisfied: Django in /usr/local/lib/python2.7/site-packages
+Requirement already satisfied: pytz in /usr/local/lib/python2.7/site-packages (from Django)
+
+$ pip freeze
+Django==1.11.1
+pytz==2017.2
+
+Desktop $ pip freeze > requirements.txt
+Inside the requirement.txt:
+Django==1.11.1
+pytz==2017.2
+
+$ pip uninstall Django
+Successfully uninstalled Django-1.11.1
+
+$ pip show Django
+Nothing
+
+$ pip search Flask

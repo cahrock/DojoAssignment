@@ -7,29 +7,70 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <script type="text/javascript">
+            $(document).ready(function(){
+                $(document).on('click','button', function(){
+                    var pic = "";
+                    var fname = $('#first').val();
+                    var lname = $('#Last').val();
+                    var desc = $('#desc').val();
+
+                    if($('#first').val() == ''){
+                          alert('Input can not be left blank');
+                    } else {
+                        $.ajax({
+                            url: 'https://randomuser.me/api/',
+                            dataType: 'json',
+                            success: function(data) {
+                                var picture = data.results[0].picture.medium;
+                            // console.log(data);
+
+                                var html_str = `
+                                                <div class="detail">
+                                                    <img src="${picture}" alt="random image">
+                                                    <span> ${fname} ${lname}</span><br>
+                                                    <hr>
+
+                                                    <span id="popup"> ${desc}</span><br>
+
+                                                </div>
+                                                `;
+                            $('#profile').html(html_str);
+                          }
+                        });
+                    }
 
 
+                    // reset the text field
 
+                })
+                $('#profile').click(function (){
+                    $("#popup").css('visibility','visible');
+                });
+                $('section')[0].reset();
+            });
         </script>
 
     </head>
     <body>
         <div class="container">
-            <header>
-                Contact Name
-            </header>
-            <section>
-                <label for="">First Name</label>
-                <input type="text" name="" value="">
-                <label for="">Last Name</label>
-                <input type="text" name="" value="">
-                <label for="">Description</label>
-                <input id="desc" type="textarea" name="desc" value="">
-                <button type="button" name="add_hero">Add user</button>
-            </section>
-            <aside class="heroes">
+            <div class="wrapper">
+                <header>
+                    Contact Name
+                </header>
+                <section>
+                    <label for="">First Name</label>
+                    <input id="first" type="text" name="fname" value="">
+                    <label for="">Last Name</label>
+                    <input id="Last" type="text" name="lname" value="">
+                    <label for="">Description</label>
+                    <input id="desc" type="textarea" name="desc"/>
+                    <button type="submit" name="btn">Add user</button>
+                </section>
+                <aside id="profile">
 
-            </aside>
+                </aside>
+            </div>
+
         </div>
     </body>
 </html>

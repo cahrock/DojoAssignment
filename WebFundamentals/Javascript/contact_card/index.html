@@ -42,9 +42,11 @@
                         dataType: 'json',
                         success: function( face ) {
                             var picture = face.results[0].picture.thumbnail;
+
                             console.log('in:'  + picture);
                             var html_str = `
                                             <div>
+
                                                 <img src="${picture}" alt="random image">
                                                 <span> ${fname} ${lname}</span><br>
                                                 <hr>

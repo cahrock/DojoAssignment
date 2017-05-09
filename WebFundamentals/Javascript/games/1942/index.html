@@ -1,0 +1,194 @@
+<html>
+<head>
+	<title>1942 Game</title>
+<script type="text/javascript" src ="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+var bomb_sound = new Audio('bomb_sound.mp3');
+</script>
+
+<style type="text/css">
+	body{
+		background-color:black;
+	}
+	#container{
+		background: url('background2.jpg');
+		width:1000px;
+		height:550px;
+
+	}
+	#hero{
+		background: url('1942.gif');
+		background-position: -85px -180px;
+		width:28px;
+		height:28px;
+		position:absolute;
+	}
+	.enemy1{
+		background: url('1942.gif');
+		background-position: -30px -10px;
+		width:28px;
+		height:28px;
+		position:absolute;
+		transform: rotate(180deg);
+	}
+	.bullet{
+		background: url('1942.gif');
+		background-position: -185px -400px;
+		width:18px;
+		height:18px;
+		position:absolute;
+
+	}
+	#score{
+		position:absolute;
+		border:10px solid red;
+		top:20px;
+		left:800px;
+		background-color:white;
+		padding:10px;
+		font-size:30px;
+		font-family: Arial;
+	}
+
+	.explosion{
+		background: url('1942.gif');
+		background-position: -146px -138px;
+
+
+	}
+</style>
+</head>
+<body>
+	<div id='container'>
+		<div id='hero'></div>
+		<div id='enemies'></div>
+		<div id='bullets'>
+
+		</div>
+	</div>
+
+	<div id='score'></div>
+
+
+
+
+	5. When the spacebar is pressed, have the hero shoot a bullet
+	6....
+
+
+<script>
+
+	var score = 0;
+	var hero = {
+		x:300,
+		y:400
+	}
+
+	var enemies =[{x:50,y:100},{x:350,y:50},{x:450,y:150},{x:150,y:75},{x:175, y:25},{x:300, y:175},{x:425, y:205}];
+	var bullets = [];
+
+	function displayHero(){
+		document.getElementById('hero').style['top'] = hero.y + "px"
+		document.getElementById('hero').style['left'] = hero.x + "px"
+	}
+
+	function displayEnemies(){
+		var output = '';
+		for (var i =0; i<enemies.length; i++){
+			output += "<div class='enemy1' style='top:"+enemies[i].y+"px; left:"+enemies[i].x+"px;'></div>";
+		}
+
+		document.getElementById('enemies').innerHTML =output;
+	}
+
+	function displayBullets(){
+		var output = '';
+		for (var i =0; i<bullets.length; i++){
+			output += "<div class='bullet' style='top:"+bullets[i].y+"px; left:"+bullets[i].x+"px;'></div>";
+		}
+		document.getElementById('bullets').innerHTML = output;
+
+	}
+	function moveBullets(){
+		for(var i=0; i<bullets.length;i++){
+			bullets[i].y -=10;
+			if(bullets[i].y<0){
+				bullets[i]=bullets[bullets.length-1]
+				bullets.pop()
+			}
+		}
+	}
+
+	function moveEnemies(){
+		for (var i =0; i<enemies.length; i++){
+			enemies[i].y += 5;
+			if(enemies[i].y > 540){
+				enemies[i].y =0;
+				enemies[i].x = ((Math.random()*500)+20)
+			}
+		}
+	}
+	function displayScore(){
+		document.getElementById('score').innerHTML = score;
+	}
+
+	function gameLoop(){
+		displayHero();
+		moveEnemies();
+		displayEnemies();
+		moveBullets();
+		displayBullets();
+		detectCollision();
+		displayScore();
+	}
+
+	function detectCollision(){
+		var output=''
+		for(var i=0;i<bullets.length;i++){
+			for(var j=0; j<enemies.length;j++){
+				if(Math.abs(bullets[i].x - enemies[j].x) < 20 && Math.abs(bullets[i].y-enemies[j].y)<20){
+
+
+					// console.log(airplane)
+					// $(.css('background-position', '-146px -38px') this is the position of the explosion on the 1942.gif
+					score +=10
+					bullets[i]=bullets[bullets.length-1]
+					bullets.pop()
+					enemies[j]=enemies[enemies.length -1]
+					enemies.pop()
+					bomb_sound.play();
+					setTimeout (function(){
+						bomb_sound.currentTime=0;
+						bomb_sound.pause()
+					},1000)
+
+				}
+			}
+		}
+	}
+
+	setInterval(gameLoop,50)
+	document.onkeydown = function(a){
+		if(a.keyCode == 37){
+			hero.x -= 10;
+		}
+		else if(a.keyCode == 39){
+			hero.x += 10;
+		}
+		else if(a.keyCode ==38){
+			hero.y -=10;
+		}
+		else if(a.keyCode ==40){
+			hero.y +=10;
+		}
+		else if(a.keyCode == 32){
+			bullets.push({x: hero.x+5 , y: hero.y-10 })
+			displayBullets();
+		}
+	}
+	setInterval(gameLoop(),100)
+	displayHero();
+	displayEnemies();
+</script>
+</body>
+</html>

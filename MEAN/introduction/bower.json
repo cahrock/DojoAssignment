@@ -1,0 +1,21 @@
+{
+  "name": "introduction",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Arif Mustofa <a.mustofa@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/cahrock/DojoAssignment",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
