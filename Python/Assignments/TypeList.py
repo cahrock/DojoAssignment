@@ -3,6 +3,8 @@
 
 data = ['magical unicorns',19,'hello',98.98,'world']
 
+# This is excellent work. Please talk to Claudia about checkStr and checkInt being 0's.
+
 def typeList(data):
     newStr = ""
     sum = 0
