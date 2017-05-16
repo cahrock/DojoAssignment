@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask,url_for, render_template, redirect, request
 
 app = Flask(__name__)
 
@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 @app.route('/result')
-@app.route('/result', methods = ['POST'])
+@app.route('/result',methods = ['POST'])
 def results():
 
     name = request.form['name']

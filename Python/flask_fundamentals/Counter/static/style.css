@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    font-size: 40px;
+}
+body{
+    width: 300px;
+    margin: auto;
+    padding-top: 100px
+}
+.wrapper{
+    margin:auto;
+    padding-top: 100px
+}

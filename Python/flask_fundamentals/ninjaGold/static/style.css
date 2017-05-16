@@ -1,0 +1,48 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+.top {
+    width: 700px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.main{
+    margin:auto;
+    padding:20px;
+    width: 950px;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    border: 2px solid #000000;
+}
+
+.box{
+    width: 200px;
+    margin: auto;
+    padding: 10px;
+    height: auto;
+    border: 2px solid #000000;
+    text-align: center;
+}
+.box p{margin: 10px;}
+.activities{
+    width: : 950px;
+}
+.activities p{margin-top: 20px;}
+.textArea{
+    width: 950px;
+    height: 200px;
+    margin-top: 20px;
+    border: 2px solid #000000;
+    overflow-y: scroll;
+    resize: none;
+}

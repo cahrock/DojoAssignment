@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    width: 800px;
+    height: auto;
+}
+
+.wrapper{
+    margin: auto;
+    padding: 20px;
+    width: 600px;
+    height: auto;
+    border: 2px solid #000000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.wrapper h1,h3,h4{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.msgBox{
+    width: 250px;
+    height: 150px;
+    background-color: red;
+    color: #FFFFFF;
+}
