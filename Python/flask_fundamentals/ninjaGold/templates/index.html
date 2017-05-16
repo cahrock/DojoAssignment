@@ -16,7 +16,7 @@
     <div class='wrapper'>
         <div class='top'>
             <p>Your gold: </p>
-            <input type='text' name='total_gold' value='{{session['total_gold']}}'>
+            <input type='text' name='total_gold' value='{{session['gold']}}'>
         </div>
         <div class='main'>
             <div class='box'>
@@ -52,14 +52,15 @@
                     <input type='submit'>
                 </form>
             </div>
+            <p>Activities:</p><br>
             <div class="activity">
-                <p>Activities:</p><br>
 
+                {% for activity in session['log'] %}
+                    <p>{{activity}}</p>
+                {% endfor %}
 
-                <textarea class="textArea" name="txtArea" rows="10" cols="80">
-
-                </textarea>
             </div>
+            <a href="/reset">Reset</a>
         </div>
 
         <div class='footer'>
