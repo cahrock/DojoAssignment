@@ -41,7 +41,7 @@ def process():
         if gold < 0:
             session['log'].insert(0,("You have loss - {}".format(datetime.utcnow())))
         else:
-            session['gold'] = gold
+            session['gold'] += gold
             session['log'].insert(0,("You have earned {} gold - {}".format(gold,datetime.utcnow())))
 
     return redirect('/')
