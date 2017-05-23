@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Result</title>
+        <style media="screen">
+        <style media="screen">
+            *{margin: 0px; padding: 0px;}
+            .wrapper{margin:auto;}
+            .survey-box{margin: auto; border: .5px solid black; padding: 10px; width: 300px; display: block;}
+
+        </style>
+        </style>
+    </head>
+    <body>
+        <div class="result">
+
+        </div>
+        <div class="wrapper">
+            <div class="msg-box">
+                <p>You have been attempting to submit the surveys {{request.session.count}} times </p>
+            </div>
+            <div class="survey-box">
+                <h2>Submitted Info:</h2>
+                <p>Name              : {{request.session.full_name}}</p> <br>
+                <p>Location          : {{request.session.location}}</p><br>
+                <p>Favorite langugae : {{request.session.language}}</p><br>
+                <p>Comment           : {{request.session.comment}}</p>
+            </div>
+
+        </div>
+        <button type="button" name="button">Go-back</button>
+    </body>
+</html>

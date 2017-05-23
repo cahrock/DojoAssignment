@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login and Registration Validation</title>
+        <style media="screen">
+
+            *{
+                margin:0px;
+                padding: 0px;
+            }
+
+            h1 {
+                text-align:center
+            }
+            .wrapper {
+                width:960px;
+                height:850px;
+                margin:50px auto;
+                padding-top: 25px;
+                font-family:'Droid Serif',serif;
+            }
+            .main {
+                width:380px;
+                padding:15px 60px;
+                background:#EEEEEE;
+                box-shadow:0 0 10px gray;
+                margin-top:20px
+            }
+            input {
+                margin: auto;
+                width:100%;
+                padding:10px;
+                margin-top:10px;
+                font-size:16px;
+                margin-bottom:30px
+            }
+            .btn_Submit {
+                padding:10px;
+                margin: auto;
+                background-color:#474242;
+                color:#fff;
+                border:2px solid #adadad;
+                font-size:20px;
+                font-weight:700;
+                text-align: center;
+            }
+            .btn_Submit:hover {
+                background-color:#adadad;
+                border:2px solid #474242
+            }
+            form{
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            #signup{
+                color: blue;
+                font-weight: bold;
+            }
+        </style>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <div class="main">
+                <div id="required">
+                      {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                          {% for message in messages %}
+                            <p>{{message}}</p>
+                          {% endfor %}
+                        {% endif %}
+                      {% endwith %}
+                </div>
+                <form action="/login" method="POST">
+                	<div class="login">
+                		<div class="login-screen">
+                			<div class="app-title">
+                				<h1>Login</h1>
+                			</div>
+
+                			<div class="login-form">
+                				<div class="control-group">
+                				<input type="text" value="" placeholder="email" name="email">
+                				</div>
+                				<div class="control-group">
+                				<input type="password" value="" placeholder="password" name="password">
+                				</div>
+                                <input type="submit" value="Log in" class="btn_Submit" >
+                			    <br>
+                			</div>
+                		</div>
+                	</div>
+                </form>
+            </div>
+            <div class="main">
+
+                <form class="emailForm" action="/register" name="emailForm" method="post">
+                    <div class="app-title">
+                        <h1>Register</h1>
+                    </div>
+                    <input type='text' name="first_name" id="txt_Fname" placeholder='First Name'/>
+                    <input type='text' name="last_name" id="txt_Lname" placeholder='Last Name'/>
+                    <input type='email' name="email" id='txt_Email' placeholder='Valid Email Address'/>
+                    <input type='text' name="password" id="password" placeholder='Password'/>
+                    <input type='text' name="c_password" id="txt_Confpaswd" placeholder='Confirm password'/>
+                    <input type='submit' class='btn_Submit' name="submit" Value='Submit' />
+                </form>
+            </div>
+
+
+        </div>
+    </body>
+
+</html>

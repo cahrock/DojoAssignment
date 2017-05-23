@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey Form</title>
+        <style media="screen">
+            *{margin: 0px; padding: 0px;}
+            .wrapper{margin:auto;}
+            .survey-box{margin: auto; padding: 10px; width: 300px; display: block;}
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+
+            <form class="survey-box" action='/process' method='post'>
+                {% csrf_token %}
+                My name: <input type='text' name='name'>
+                Your Location :
+                    <select name="location" >
+                      <option value="Washington, DC">DC</option>
+                      <option value="Chicago">IL</option>
+                      <option value="New York City">NY</option>
+                      <option value="Washington">WA</option>
+                    </select>
+
+                Favorite language :
+                    <select name="language">
+                         <option value="Python">Python</option>
+                         <option value="C#">C#</option>
+                         <option value="Ruby">Ruby</option>
+                         <option value="Angular">Angular.js</option>
+                    </select>
+                Comment:
+                    <textarea name="comment" rows="8" cols="80"></textarea>
+                <input type='submit' name='btn' value='Submit'>
+            </form>
+        </div>
+    </body>
+</html>

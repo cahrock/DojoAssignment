@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja<s/title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'dis_ninja_app/css/styles.css' %}">
+        <script src="{% static 'dis_ninja_app/js/script.js' %}" > </script>
+    </head>
+    <body>
+        <h1>Ninja</h1>
+        {% load static from staticfiles %}
+        <img height="250" width="250" src="{% static 'dis_ninja_app/donatello.jpg' %}"><a href="/ninja/purple">purple</a>
+        <img src="{% static 'dis_ninja_app/images/donatello.jpg' %}" alt="">
+    </body>
+</html>
