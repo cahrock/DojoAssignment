@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Surprise Me</title>
+        <style media="screen">
+            body{margin:auto;text-align: center;}
+        </style>
+    </head>
+    <body>
+        <h1>Surprise me !</h1>
+        <form class="" action="result" method="post">
+            {% csrf_token %}
+            <label for="pickme">Pick any number:</label><input type="text" name="pickme" value="">
+            <input type="submit" name="submit" value="Submit">
+        </form>
+
+    </body>
+</html>

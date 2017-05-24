@@ -2,15 +2,19 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Ninja<s/title>
-        {% load staticfiles %}
-        <link rel="stylesheet" href="{% static 'dis_ninja_app/css/styles.css' %}">
-        <script src="{% static 'dis_ninja_app/js/script.js' %}" > </script>
+        <title>Ninjas</title>
+        <style media="screen">
+            body{
+                margin:auto;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
-        <h1>Ninja</h1>
-        {% load static from staticfiles %}
-        <img height="250" width="250" src="{% static 'dis_ninja_app/donatello.jpg' %}"><a href="/ninja/purple">purple</a>
-        <img src="{% static 'dis_ninja_app/images/donatello.jpg' %}" alt="">
+        {% load staticfiles %}
+        <h1>Ninja actor:</h1>
+        <h1>{{image}}</h1>
+        <img height="250" width="250" src="{% static 'dis_ninja_app/images/'%}{{image}}.jpg">
+        <h3><a href="/">Go-back</a></h3>
     </body>
 </html>

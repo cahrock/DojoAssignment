@@ -3,9 +3,21 @@
     <head>
         <meta charset="utf-8">
         <title>Dissapearing Ninja</title>
+        <style media="screen">
+            body{
+                margin:auto;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <h1>No Ninja here</h1>
-        <p>Find them => url: .../ninjas</p>
+        <p>Click one of them, below</p>
+        {% load staticfiles %}
+        <a href="/ninjas/purple"><img height="75" width="75" src="{% static 'dis_ninja_app/images/donatello.jpg' %}">purple</a>
+        <a href="/ninjas/blue"><img height="75" width="75" src="{% static 'dis_ninja_app/images/leonardo.jpg' %}">Blue</a>
+        <a href="/ninjas/orange"><img height="75" width="75" src="{% static 'dis_ninja_app/images/michelangelo.jpg' %}">Orange</a>
+        <a href="/ninjas/red"><img height="75" width="75" src="{% static 'dis_ninja_app/images/raphael.jpg' %}">Red</a>
+        <img src="{% static 'dis_ninja_app/images/tmnt.png' %}" alt="">
     </body>
 </html>
