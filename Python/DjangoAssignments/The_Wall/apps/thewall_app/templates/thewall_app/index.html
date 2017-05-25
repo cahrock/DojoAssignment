@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Wall</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'thewall_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <h1>The Wall</h1>
+            </div>
+            <div id="required">
+
+            </div>
+            <div class="main_content">
+                <form action="/login" method="POST">
+                	<div class="login">
+                		<div class="login-screen">
+                			<div class="app-title">
+                				<h1>Login</h1>
+                			</div>
+
+                			<div class="login-form">
+                				<div class="control-group">
+                				<input type="text" class="login-field" value="" placeholder="email" name="email">
+                				<label class="login-field-icon fui-user" for="login-name"></label>
+                				</div>
+
+                				<div class="control-group">
+                				<input type="password" class="login-field" value="" placeholder="password" name="password">
+                				<label class="login-field-icon fui-lock" for="login-pass"></label>
+                				</div>
+
+                                <input type="submit" value="Log in" class="btn" >
+                			    <br>
+                			</div>
+                		</div>
+                	</div>
+                </form>
+                <form action="/register" name="emailForm" method="post">
+                    <div class="login">
+                		<div class="login-screen">
+                			<div class="app-title">
+                				<h1>Register</h1>
+                			</div>
+
+                			<div class="login-form">
+                				<div class="control-group">
+                                    <input type='text' name="first_name" id="txt_Fname" placeholder='First Name'/>
+                				</div>
+                				<div class="control-group">
+                    				<input type='text' name="last_name" id="txt_Lname" placeholder='Last Name'/>
+                				</div>
+                                <div class="control-group">
+                    				<input type='email' name="email" id='txt_Email' placeholder='Valid Email Address'/>
+                				</div>
+                                <div class="control-group">
+                    				<input type='text' name="password" id="password" placeholder='Password'/>
+                				</div>
+                                <div class="control-group">
+                    				<input type='text' name="c_password" id="txt_Confpaswd" placeholder='Confirm password'/>
+                				</div>
+                                <input type="submit" value="Register" class="btn" >
+                			    <br>
+                			</div>
+                		</div>
+                	</div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
