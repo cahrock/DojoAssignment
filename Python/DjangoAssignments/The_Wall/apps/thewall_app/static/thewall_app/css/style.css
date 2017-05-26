@@ -61,11 +61,27 @@ hr{
 input{
     margin-top: 10px;
 }
+.btn_login{
+    border: 2px solid transparent;
+    background-color: #3498DB;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 3px;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+}
 .btn_Submit{
     position: relative;
     left:375px;
     border: 2px solid transparent;
-    background: #3498DB;
+    background-color: #3498DB;
     color: #ffffff;
     font-size: 14px;
     padding: 5px 0;
@@ -129,7 +145,7 @@ a{
 
 .main_content{margin: auto; padding: 10px; display: flex;flex-flow: row wrap;justify-content: center;}
 form{margin: 10px;}
-.title{font-size: 26px;margin:20px;text-align: center;color: #FFF; 
+.title{font-size: 26px;margin:20px;text-align: center;color: #FFF;
 }
 .login {margin: 20px auto;width: 300px;
 }
@@ -146,7 +162,7 @@ form{margin: 10px;}
 .control-group {margin-bottom: 10px;
 }
 
-input {text-align: center;background-color: #ECF0F1;border: 2px solid transparent;border-radius: 3px;font-size: 16px;font-weight: 200;padding: 10px 0;width: 250px;transition: border .5s;margin: 5px;
+input {text-align: center;background-color: #ECF0F1;border: 2px solid transparent;border-radius: 3px;font-size: 16px;font-weight: 200;padding: 10px 0;width: 250px; border .5s;margin: 5px;
 }
 
 input:focus {border: 2px solid #3498DB;box-shadow: none;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Full Stack Book</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'fsbook_app/css/style.css' %}">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="">
+            <h1>Product</h1>
+            {% for book in items %}
+                    <div class="box">
+                        <p><h3>{{book.title}}</h3></p><br>
+                            <p> Author : <i><b>{{book.author}}</b></i></p>
+                            <p><span>category :</span> {{book.category}}
+                    </div>
+            {% endfor %}
+        </div>
+        <h1>Add a book</h1>
+        <div class="formBox">
+            <form class="" action="/" method="post">
+                {% csrf_token %}
+                <label for="">Title</label>
+                <input class="title_" type="text" name="title" value="">
+                <label for="">Category</label>
+                <input class="category_" type="text" name="category" value="">
+                <label for="">Author</label>
+                <input class="category_" type="text" name="author" value="">
+                <input class="btn" type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

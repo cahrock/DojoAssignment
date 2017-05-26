@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Courses</title>
+    <style media="screen">
+        .wrapper{
+            margin:auto;
+            padding: 10px;
+        }
+        .add_class{
+            margin:auto;
+            padding: 15px;
+            width: 400px;
+            border: .5px solid black;
+        }
+        .btn{
+            background-color: red;
+            padding: 5px;
+        }
+        .name{ width: 300px;line-height: 15px;}
+        input{
+            margin: 10px;
+        }
+        .show{
+            width:600px;
+            border: .5px solid black;
+        }
+        tr{line-height: 20px;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <form class="add_course" action="/add_course" method="post">
+            {% csrf_token %}
+            <h1>Add new courses</h1>
+            <label for="">Name :</label>
+            <input class="name" type="text" name="name" value="">
+            <label for="">Description :</label>
+            <textarea name="description" rows="3" cols="40"></textarea>
+            <input class="btn" type="submit" name="btn_add" value="Add">
+        </form>
+
+        <div class="show">
+            <h3>Courses</h3>
+            <table>
+                <tr>
+                    <td>Course Name</td>
+                    <td>Dexcription</td>
+                    <td>Date added</td>
+                    <td>Remove</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+</html>
