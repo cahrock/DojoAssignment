@@ -1,6 +1,9 @@
-rom django.conf.urls import url, include
-from django.contrib import admin
+from django.conf.urls import url
+from . import views
 
 urlpatterns = [
-    url(r'^', include('apps.teams_app.urls')),
+    url(r'^$', views.index),
+    url(r'^process/create', views.create),
+    url(r'^process/login', views.login),
+    url(r'^success', views.success),
 ]

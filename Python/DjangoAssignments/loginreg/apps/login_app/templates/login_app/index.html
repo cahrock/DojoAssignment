@@ -6,18 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login & Registration</title>
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'login_app/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    <link rel="stylesheet" href="{% static 'login_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
 </head>
 <body>
-    <div id="required">
+    <div>
         {% load staticfiles %}
-        {% if messages %}
-            {% for i in messages %}
-            <li>{{i}}</li>
-            {% endfor %}
-        {%endif%}
-
+            {% if messages %}
+                {% for i in messages %}
+                <li class="required">{{i}}</li>
+                {% endfor %}
+            {%endif%}
         {{message}}
+    </div>
+    <div class="">
+        {% for i in items %}
+        <li>{{i.first_name}} {{i.email}} {{i.password}} {{i.created_at}}</li>
+        {%endfor%}
+    </div>
+    <div class="">
+
     </div>
     <div class="main_content">
         <form action="/login" method="POST">

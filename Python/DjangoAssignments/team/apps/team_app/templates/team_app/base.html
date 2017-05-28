@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Base - Team</title>
+
+    <link rel="stylesheet" href="{% static 'team_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <div class="header">
+        <p><span class="logo">The A-Team</span><span class="username">hello.. {{logged_in_user[0]['first_name'] }} {{logged_in_user[0]['last_name']}}</span>&nbsp<span class="logout"><a href="/logout">Logout</a></span></p>
+        <hr>
+    </div>
+    <div class="wrapper">
+        {% block page %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

@@ -28,4 +28,6 @@ def join_friends(request):
 
 
 
+
+
 # Create your views here.
