@@ -1,0 +1,17 @@
+{% extends 'team_app/base.html' %}
+{% block page %}
+    <div class="main-post">
+        <h1>The A-Team - Create</h1>
+
+        <form class="" action="/create" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>
+                    Create a Team
+                </legend>
+                Team name: <input type="text" name="createteam" value="">
+                <input type="submit" name="Submit" value="Create">
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

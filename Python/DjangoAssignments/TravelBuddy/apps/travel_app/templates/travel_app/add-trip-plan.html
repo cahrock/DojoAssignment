@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Trips</title>
+    <style media="screen">
+        .header{margin:20px;position: relative;left: 50px;}
+        .wrapper{margin:auto;padding: 40px; width: 400px;}
+        form{margin:auto;text-align: left;}
+        table, td, th {padding:10px;border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="/travel_app/logout">Logout</a> &nbsp | &nbsp<a href="/travel_app/travels">Home</a>&nbsp|&nbsp<span>{{request.session.loggedin_user}}</span>
+
+    </div>
+    <hr>
+    <div class="wrapper">
+
+        <form class="" action="/travel_app/processing" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>
+                    <h1>Add Trips</h1>
+                </legend>
+                <div class="">
+                    <label for="">Destination: </label><input type="text" name="destination" value="">
+                </div>
+                <hr>
+                <div class="">
+                    <label for="">Description: </label>
+                    <textarea name="description" rows="3" cols="60"></textarea>
+                </div>
+                <hr>
+                <div class="">
+                    <label for="">Travel date from: </label><input type="date" name="datefrom" value="">
+                </div>
+                <hr>
+                <div class="">
+                    <label for="">Travel date to: </label><input type="date" name="dateto" value="">
+                </div>
+                <hr>
+                <input type="submit" name="submit" value="Add trip">
+            </fieldset>
+        </form>
+        <div>
+            {% load staticfiles %}
+                {% if messages %}
+                    {% for i in messages %}
+                    <li class="required">{{i}}</li>
+                    {% endfor %}
+                {%endif%}
+            {{message}}
+        </div>
+    </div>
+</body>
+</html>

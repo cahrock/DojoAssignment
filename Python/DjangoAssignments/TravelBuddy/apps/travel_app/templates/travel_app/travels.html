@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travels</title>
+    <style media="screen">
+        .header{margin:20px;position: relative;left: 50px;}
+        .wrapper{margin:auto;padding: 40px}
+        form{margin:auto;text-align: left;}
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Travels</h1>
+        <h3>Welcome! &nbsp{{request.session.loggedin_user}}</h3><a href="/travel_app/logout">Logout</a> &nbsp
+    </div>
+    <hr>
+    <div class="wrapper">
+        <div class="box">
+            <h3>Your Trip Schedule</h3>
+            <table>
+                <tr>
+                    <th>User's ID</th>
+                    <th>Travel destination</th>
+                    <th>Departure date</th>
+                    <th>Arrival date</th>
+                    <th>Travel plan</th>
+                    <th> Action</th>
+                </tr>
+                {% for i in allmytrip %}
+                <tr>
+                    <td>{{i.user.id}}</td>
+                    <td><a href="/travel_app/destination/{{i.trip.id}}">{{i.trip.destination}}</a></td>
+                    <td>{{i.trip.date_from}}</td>
+                    <td>{{i.trip.date_to}}</td>
+                    <td>{{i.trip.description}}</td>
+                    <td><a href="/travel_app/deletejoin/{{i.trip.id}}">CANCEL</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="box">
+            <p><h4>Other user's travel plan</h4> &nbsp<a href="/travel_app/add-trip-plan">Add trip plan</a></p>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Travel destination</th>
+                    <th>Departure date</th>
+                    <th>Arrival date</th>
+                    <th>Travel plan</th>
+                    <th>Join the plan</th>
+                </tr>
+                {% for i in itemsnot %}
+                    <tr>
+                        <td>{{i.user.name}}</td>
+                        <td><a href="/travel_app/destination/{{i.id}}">{{i.destination}}</a></td>
+                        <td>{{i.date_from}}</td>
+                        <td>{{i.date_to}}</td>
+                        <td>{{i.description}}</td>
+                        <td><a href="/travel_app/jointhetrip/{{i.id}}">Join</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="">
+            <p><span><a href="/travel_app/add-trip-plan">Add travel plan</a></span></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+*{
+    padding: 0px;
+    margin: 0px;
+
+}
+body{
+    color: #000;
+    font-size: 16px;
+    background-color: #EFEFEF;
+}
+h3{margin-bottom: 10px;}
+.wrapper{
+    margin: auto;
+    padding: 10px;
+    width: 800px;
+    height: auto;
+    background-color: #FFF;
+}
+.header{
+    padding-top: 40px;
+    color: #FFF;
+    background-color: #111166;
+}
+hr{
+    height: 1px;
+    color: #EEEEEE;
+}
+.logo{
+    font-size: 46px;
+    position: relative;
+    left: 150px;
+    bottom: 20px;
+}
+.username{
+    position: relative;
+    left: 550px;
+    color: #FFF;
+}
+.logout{
+    position: relative;
+    left: 550px;
+    color: #FFF;
+}
+.main-post{
+    margin: auto;
+    padding-bottom: 20px;
+    width: 600px;
+    height: auto;
+    padding: 10px; display: flex;flex-flow: row wrap;justify-content: center;}
+}
+.table .main_content{margin: auto; padding: 10px; display: flex;flex-flow: row wrap;justify-content: center;}
+form{margin: 10px;}

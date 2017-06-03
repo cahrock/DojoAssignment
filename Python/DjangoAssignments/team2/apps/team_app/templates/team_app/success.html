@@ -1,0 +1,51 @@
+{% extends 'team_app/base.html' %}
+{% block page %}
+    <div class="main-post">
+        <h1>The A-Team - Success page</h1><br>
+        <h3>Welcome! {{request.session.loggedin_user}}</h3>
+    </div>
+    <div class="main_content">
+        <table>
+            <th>
+            <tr>
+                <th>Team</th>
+                <th>Action</th>
+            </tr>
+            {% for i in teamjoined %}
+            <tr>
+                <td><a href="/team_app/teamdetail/{{i.id}}">{{i.name}}</a></td>
+                <td><a href="/team_app/deletejoin/{{i.id}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+
+            </th>
+        </table>
+    </div>
+    <div class="show-team">
+        <div class="showlist">
+            <form class="" action="/team_app/jointeam" method="post">
+                {% csrf_token %}
+                <select class="" name="tname">
+                    {% for i in teamnot %}
+                        <option value="{{i.id}}">{{i.name}}</option>
+                    {% endfor%}
+                </select>
+                <input type="submit" name="Submit" value="Join">
+            </form>
+        </div>
+        <div class="control-group">
+            <form class="" action="/team_app/create" method="post">{% csrf_token %}
+                <fieldset>
+                    <legend>
+                        Create a Team:
+                    </legend>
+                    <div class="">
+                        {{items.err_message}}
+                    </div>
+                    Team Name: <input type="text" name="createteam" value="">
+                    <input type="submit" name="Submit" value="Create">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}

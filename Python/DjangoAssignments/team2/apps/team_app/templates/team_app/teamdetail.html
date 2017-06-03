@@ -1,0 +1,17 @@
+{% extends 'team_app/base.html' %}
+{% block page %}
+    <div class="main-post">
+        <h1>The A-Team - Team Roaster</h1>
+    </div>
+    <div class="show-team">
+        <div class="">
+
+            {% for i in items %}
+                <li><a         href="/team_app/profile/{{i.user.id}}">{{i.user.first_name}}</a></li>
+
+            {% endfor %}
+            {{items.count_}}
+        </div>
+        <a href="/team_app/success">Return Home</a>
+    </div>
+{% endblock %}

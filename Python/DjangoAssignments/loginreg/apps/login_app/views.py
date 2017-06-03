@@ -7,17 +7,13 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    # all_user = UserManager
-
-    # User.userManager.delete()
-
     context = {
-        'items': User.userManager.show()
+        'items': User.objects.show()
     }
     return render(request, 'login_app/index.html', context)
 
 def login(request):
-    check_login = User.userManager.login(request.POST)
+    check_login = User.objects.login(request.POST)
     if check_login['flag']:
         return redirect('/success')
     else:
@@ -31,9 +27,11 @@ def logout(request):
     return redirect('/')
 #
 def register(request):
-    check_register = User.userManager.register(request.POST)
+    check_register = User.objects.register(request.POST)
     if check_register[0]:
+        # user_session = User.objects.filter(email= request.POST['first_name'])
         request.session['user_name'] = request.POST['first_name']
+        # request.session['user_name'] = user_session[0].id
 
         return redirect('/success')
     else:

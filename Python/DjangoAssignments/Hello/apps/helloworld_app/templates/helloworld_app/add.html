@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Team Information</title>
+    {% load staticfiles %}
+      <link rel="stylesheet" href="{% static 'login_app/css/style.css' %}"media="screen" title="no title"  charset="utf-8">
+  </head>
+
+  <body>
+    <div class="teams-page">
+
+
+<form class="form" action="process_travel" method="post">{%csrf_token%}
+  <h2 class='info'> Add a Trip</h2>
+  <input type="text" placeholder="destination" name="destination"/>
+  <input type="text" placeholder="description" name="description"/>
+  <input type="date" placeholder="from date: YYYY-MM-DD" name="date_from"/>
+  <input type="date" placeholder="to date: YYYY-MM-DD" name="date_to"/>
+  <input class ='button' type="submit" name="" value="Add">
+
+  {%if messages%}
+          {%for message in messages%}
+          <h3 class='message'>{{message}}</h3>
+          {%endfor%}
+          {%endif%}
+<hr>
+
+<a href="/travels">Home</a> | <a href="/logout">Log Out</a>
+</form>
+
+
+    </div>
+
+  </body>
+
+  </html>
