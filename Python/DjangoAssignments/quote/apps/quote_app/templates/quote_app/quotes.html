@@ -51,7 +51,9 @@
                 </legend>
                 {% for i in itemsfav %}
                 <div class="box-q">
-                    <p><i>"{{i.quote}}" - <span><strong>{{i.quoted_by}}</strong></span></i>
+                    <p><i>"{{i.quote}}" - <span><strong>{{i.quoted_by}}</strong></span></i></p>
+
+                    <p style="font-size=10px"><span><i>posted by: <a href="/quote_app/profile/{{i.posted_by}}">{{i.posted_by}}</a></i></span></p>    
                     <form class="" action="/quote_app/removefav/{{i.id}}" method="post">
                         {% csrf_token %}
                         <input type="submit" name="btn_removefav" value="Remove from favorites">

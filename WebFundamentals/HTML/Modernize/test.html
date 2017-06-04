@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gotta Catch'em All</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- <script src="apis.js" type="text/javascript" >
+
+        </script> -->
+        <script>
+            $(document).ready(function(){
+                $(document).on('click', 'button', function(){
+                    $.ajax({
+                    url: 'https://randomuser.me/api/',
+                    dataType: 'json',
+                    success: function( face ) {
+                        var picture = face.results[0].picture.thumbnail;
+
+                        console.log('in:'  + picture);
+                        var html_str = `
+                                        <div>
+
+                                            <img src="${picture}" alt="random image">
+
+                                        </div>
+                                        `;
+                    $("#outlet").html(html_str);
+
+                    }
+                    });
+                })
+
+                // $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+                //     var html_str = "";
+                //     html_str += "<h4>Types</h4>";
+                //     html_str += "<ul>";
+                //     for(var i = 0; i < res.types.length; i++) {
+                //         html_str += "<li>" + res.types[i].name + "</li>";
+                //     }
+                //     html_str += "</ul>";
+                //     $("#bulbasaur").html(html_str);
+                // }, "json");
+            })
+        </script>
+    </head>
+    <body>
+        <button type="button" name="add_hero">Houses</button>
+        <div id="outlet">
+        </div>
+    </body>
+</html>

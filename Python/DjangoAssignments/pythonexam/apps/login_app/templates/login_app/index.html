@@ -21,7 +21,7 @@
         </div>
         <div class="">
             {% for i in items %}
-            <li>username: {{i.username}} , password: {{i.password}}</li>
+            <li>email: {{i.email}} , password: {{i.password}}</li>
             {%endfor%}
         </div>
         <div class="">
@@ -38,7 +38,7 @@
 
                         <div class="login-form">
                             <div class="control-group">
-                            <input type="text" class="login-field" value="" placeholder="username" name="username">
+                            <input type="text" class="login-field" value="" placeholder="email" name="email">
                             <label class="login-field-icon fui-user" for="login-name"></label>
                             </div>
 
@@ -63,11 +63,13 @@
 
                         <div class="login-form">
                             <div class="control-group">
-                                <input type='text' name="name" id="txt_Fname" placeholder='Full Name'/>
+                                <input type='text' name="first_name" id="txt_Fname" placeholder='Name'/>
                             </div>
-
                             <div class="control-group">
-                                <input type='text' name="username" id='txt_Uname' placeholder='Valid Username'/>
+                                <input type='text' name="last_name" id="txt_Lname" placeholder='Alias'/>
+                            </div>
+                            <div class="control-group">
+                                <input type='text' name="email" id='txt_Email' placeholder='Valid Email Address'/>
                             </div>
                             <div class="control-group">
                                 <input type='text' name="password" id="password" placeholder='Password'/>
@@ -75,7 +77,9 @@
                             <div class="control-group">
                                 <input type='text' name="confirm" id="txt_Confpaswd" placeholder='Confirm password'/>
                             </div>
-
+                            <div class="control-group">
+                                <input type='date' name="dob" id="dob"/>
+                            </div>
                             <input type="submit" value="Register" class="btn" >
                             <br>
                         </div>

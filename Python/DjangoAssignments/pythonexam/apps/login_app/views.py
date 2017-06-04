@@ -7,7 +7,6 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-
     context = {
         'items': User.objects.show()
     }
@@ -15,10 +14,10 @@ def index(request):
 
 def login(request):
     check_login = User.objects.login(request.POST)
-    request.session['loggedin_user'] = request.POST['username']
 
     if check_login == True:
-        return redirect('/travel_app/travels')
+        request.session['loggedin_user'] = request.POST['email']
+        return redirect('/exam_app/quotes')
     else:
         for i in check_login[1]:
             messages.info(request,i)
@@ -31,11 +30,10 @@ def logout(request):
 #
 def register(request):
     check_register = User.objects.register(request.POST)
-    request.session['loggedin_user'] = request.POST['username']
-    # request.session['loggedin_user'] = check_register[0]
+    request.session['loggedin_user'] = request.POST['email']
 
     if check_register[0]:
-        return redirect('/travel_app/travels')
+        return redirect('/exam_app/quotes')
     else:
         for err in check_register[1]:
             print check_register[1]

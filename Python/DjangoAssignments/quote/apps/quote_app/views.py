@@ -9,8 +9,11 @@ from django.db.models import Count
 
 # Create your views here.
 def quotes(request):
+    q = set(Quotes.objects.all())
+    u = set(Quotes.objects.filter(quote_fav__user__email=request.session['loggedin_user']))
+    allquotes = q.difference(u)
     context = {
-        'items': Quotes.objects.all().order_by('-created_at'),
+        'items': allquotes,
         'itemsfav': Quotes.objects.filter(quote_fav__user_id__email = request.session['loggedin_user']),
         }
     return render(request, 'quote_app/quotes.html', context)
