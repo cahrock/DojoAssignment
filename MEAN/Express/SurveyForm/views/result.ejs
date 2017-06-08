@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey - Result</title>
+
+    </head>
+    <body>
+        <fieldset>
+            <legend>
+                <h2>Submitted Info:</h2>
+            </legend>
+            <div class="wrapper">
+                <ul>
+            		<li>Name: <strong><%= data.name %></strong></li>
+            		<li>Dojo Location: <strong><%= data.location %></strong></li>
+            		<li>Favorite Language: <strong><%= data.language %></strong></li>
+            		<li>Comment: <strong><%= data.comment %></strong></li>
+            	</ul>
+            </div>
+        </fieldset>
+
+        <a href="/"><h3>Back</h3></a>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Button Fun</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <style media="screen">
+        button{background-color: blue; color: #FFFFFF;margin:auto; padding: 10px;}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('button').click(function(){
+                $(this).css('background-color', 'red')
+            })
+            $('button').hover(function(){
+                $(this).css('background-color', 'green')
+            }, function(){
+            $(this).css("background-color", "blue");
+    })
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="button">Click me!!</button>
+
+</body>
+</html>

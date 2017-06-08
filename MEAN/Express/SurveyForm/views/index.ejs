@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <form action='/result' method='post'>
+                <fieldset>
+                    <legend>Dojo Survey Form</legend>
+                    <div class="">
+                        My name:<input type='text' name='name'>
+                    </div>
+                    <div class="">
+                        Your Location :
+                            <select name="location" >
+                              <option value="Washington, DC">DC</option>
+                              <option value="Chicago">IL</option>
+                              <option value="New York City">NY</option>
+                              <option value="Washington">WA</option>
+                            </select>
+                    </div>
+                    <div class="">
+                        Favorite language :
+                            <select name="language">
+                                 <option value="Python">Python</option>
+                                 <option value="C#">C#</option>
+                                 <option value="Ruby">Ruby</option>
+                                 <option value="Angular">Angular.js</option>
+                            </select>
+                    </div>
+                    <div class="">
+                        Comment:
+                            <textarea name="comment" rows="8" cols="80"></textarea>
+                        <input type='submit' value='Submit'>
+                    </div>
+                </fieldset>
+
+            </form>
+        </div>
+    </body>
+</html>

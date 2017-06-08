@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js">
+        </script>
+        <script type ="text/javascript">
+            $(document).ready(function (){
+                // this triggers the connection event in our server!
+                var socket = io.connect();
+                // we'll write all the socket stuff after the above line!
+                $('#Survey_Form').submit(function(e){
+                    e.preventDefault();
+                    socket.emit("posting_form", {
+                        name: $('#name').val(),
+                        location: $('#location').val(),
+                        language: $('#language').val(),
+                        comment: $('#comment').val()
+                    });
+                })
+
+                socket.on('server_response', function (data){
+                    $('#message').html('You emitted to the following information to the server : ' + JSON.stringify(data.response));
+
+                    console.log('The server says: ' + data.response);
+                });
+                socket.on('random_number', function(data){
+                    $('#number').html('Your lucky number emitted by the server: ' + JSON.stringify(data.response));
+                })
+            })
+        </script>
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <div id="message">
+
+            </div>
+            <div id="number">
+
+            </div>
+            <form id="Survey_Form" action=''>
+                <fieldset>
+                    <legend>Dojo Survey Form</legend>
+                    <div class="">
+                        My name:<input id="name" type='text' name='name'>
+                    </div>
+                    <div class="">
+                        Your Location :
+                            <select id="location" name="location" >
+                              <option value="Washington, DC">DC</option>
+                              <option value="Chicago">IL</option>
+                              <option value="New York City">NY</option>
+                              <option value="Washington">WA</option>
+                            </select>
+                    </div>
+                    <div class="">
+                        Favorite language :
+                            <select id="language" name="language">
+                                 <option value="Python">Python</option>
+                                 <option value="C#">C#</option>
+                                 <option value="Ruby">Ruby</option>
+                                 <option value="Angular">Angular.js</option>
+                            </select>
+                    </div>
+                    <div class="">
+                        Comment:
+                            <textarea id="comment" name="comment" rows="8" cols="80"></textarea>
+                        <input type='submit' value='Submit'>
+                    </div>
+                </fieldset>
+
+            </form>
+        </div>
+    </body>
+</html>
