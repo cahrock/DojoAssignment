@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Room</title>
+    <style media="screen">
+        body{margin:auto;}
+        .wrapper{margin: auto; text-align: center;padding: 20px;}
+        fieldset{width: 200px; padding: 10px;}
+        button{line-height: 15px; font-size: 14px; background-color: grey; padding: 10px;}
+        .box{margin-bottom: 10px;}
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <fieldset>
+            <legend>Chaat Room</legend>
+            <p>The page at https://localhost says</p>
+            <p>Your name:</p>
+            <div class="box">
+                <input type="text" name="name" value="">
+            </div>
+            <button id='cancel' type="button" name="button">Cancel</button>
+            <button id='ok' type="button" name="button">OK</button>
+        </fieldset>
+    </div>
+</body>
+</html>
