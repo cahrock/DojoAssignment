@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Room</title>
+    <style media="screen">
+        body{margin:auto;}
+        .wrapper{margin: auto; text-align: center;padding: 20px;}
+        fieldset{width: 200px; padding: 10px;}
+        button{line-height: 15px; font-size: 14px; background-color: grey; padding: 10px;}
+        .box{margin-bottom: 10px;}
+        #chatBox{width:100%; overflow-y: scroll;}
+        #users{margin: auto;width:200px; overflow-y: scroll;}
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var socket = io.connect();
+            var userName = prompt('Who are you?');
+            console.log('userName');
+            socket.emit('send_user_name', {'name' : userName})
+            socket.on('send_user_name',function(data){
+                for (var i = 0; i < data.all_users.length; i++) {
+                    $('#users').append(data.all_users[i] + ", ")
+                }
+
+                // console.log(data);
+            })
+            $('#btn_submit').click(function(){
+                var message = $('#chatInput').val();
+                socket.emit('send_message', {'message': message, sender: socket.id})
+                $('#chatInput') = "";
+            })
+            socket.on("send_message", function(data){
+                console.log(data);
+                // $('#chatBox').append(`<p>${data.message} - ${data.sender}</p>`)
+                $('#chatBox').append(data.message + " - " + data.sender)
+            })
+            socket.on('user_left', data =>{
+                $('#users').html("")
+                $('#users').append(data.users[i])
+                console.log(data);
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <fieldset>
+            <legend>Chaat Room</legend>
+            <p>The page at https://localhost says</p>
+            <p>Your name:</p>
+            <div class="box">
+                <input type="text" name="name" value="">
+            </div>
+            <button id='cancel' type="button" name="button">Cancel</button>
+            <button id='ok' type="button" name="button">OK</button>
+        </fieldset>
+        <fieldset>
+            <legend>Chat Room</legend>
+            <textarea id="chatBox" name="name" rows="5" cols="50"></textarea>
+            <input id="chatInput" type="text"/>
+            <button id="btn_submit" type="button" name="button">Send</button>
+            <div>
+
+            </div>
+            <p id='users'></p>
+        </fieldset>
+    </div>
+</body>
+</html>

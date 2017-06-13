@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        .comment{
+            position: relative;
+            left: 75px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home - Message Board</h1>
+    <h4>Results</h4>
+    <fieldset>
+        <legend>Messages</legend>
+        <form class="" action="/message" method="post">
+            <div class="">
+                <p>name :</p>
+                <input type="text" name="name" required>
+            </div>
+            <div class="">
+                <p>Content :</p>
+                <textarea name="content" rows="3" cols="50" required=""></textarea>
+            </div>
+            <input type="submit" name="" value="post Message">
+        </form>
+    </fieldset>
+
+    <p><% for (var i in messages) { %>
+        <p><strong><i><span><%= messages[i].name %></span></i></strong> - <i><span><%= messages[i].content %></span></i></p>
+        <div class="comment">
+            <h4><i>Comments:</i></h4>
+            <% for(var j = 0; j < messages[i].comments.length; j++) { %>
+                <p><strong><i><span><%= messages[i].comments[j].name %></span></i></strong> - <i><span><%= messages[i].comments[j].content %></span></i></p>
+            <% } %>
+
+            <form class="" action="/message/<%= messages[i]._id %>/comments" method="post">
+                <fieldset>
+                    <legend>Comment: </legend>
+                    <div class="">
+                        <p>name :</p>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="">
+                        <p> Comment Content :</p>
+                        <textarea name="content" rows="3" cols="50" required=""></textarea>
+                    </div>
+                    <input type="submit" name="" value="post Comment">
+                </fieldset>
+
+            </form>
+
+        </div>
+        <hr>
+    <% } %></p>
+
+</body>
+</html>
