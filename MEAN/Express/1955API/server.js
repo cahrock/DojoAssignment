@@ -5,10 +5,9 @@ var express = require('express'),
     port = 8000,
     app = express();
 
-// Express basic setup
-app.use(bodyParser.urlencoded({ extended: true }));
+// // Express basic setup
+// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.set('views', path.join(__dirname, './views'));
 
 mongoose.connect('mongodb://localhost/Api_Demo');
 var Schema = mongoose.Schema;
@@ -20,17 +19,27 @@ var ApiSchema = new Schema({
 var Name = mongoose.model('Name', ApiSchema);
 
 app.get('/', function(req, res){
-
-    res.json();
+    Name.find({}, function(err, results){
+          if (err) { console.log(err);
+        }
+        res.json(results);
+      console.log(results);
+    })
 })
 
+
 app.get('/new/:name', function(req, res){
-    Name.create(req.body, function(err, results){
+    var people = new Name({name: req.params.name});
+    people.save(function(err, newUser){
         if(err){
+            res.json(err)
             console.log(err);
-        };
+        }
+        else {
+            res.json(newUser)
+            console.log(newUser);
+        }
     })
-    res.redirect('/');
 })
 
 app.listen(8000, function() {

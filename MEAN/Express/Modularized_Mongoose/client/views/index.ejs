@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Dashboard</title>
+</head>
+<body>
+    <h1>Mongoose Dashboard</h1>
+    <fieldset>
+        <legend>My Car Collections</legend>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Action:</td>
+                <td>Delete</td>
+            </tr>
+            <% for(var i in cars){ %>
+                <tr>
+                    <td><a href="/show/<%= cars[i].id %>"><%= cars[i].name %></a></td>
+                    <td><a href="/edit/<%= cars[i].id %>">Edit</a></td>
+                    <td>
+                        <form action="/delete/<%= cars[i].id %>" method='post'>
+                               <input type="submit" value="Delete">
+                         </form>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </fieldset>
+    <a href="/create">Create a New Car</a>
+
+    <fieldset>
+        <legend>Create a new Car:</legend>
+        <form class="" action="/create" method="post">
+            <div class="">
+                Name: <input type="text" name="name" value="">
+            </div>
+            <div class="">
+                engine: <input type="text" name="engine" value="">
+            </div>
+            <div class="">
+                Color: <input type="text" name="color" value="">
+            </div>
+            <input type="submit" name="submit" value="Create">
+        </form>
+
+    </fieldset>
+</body>
+</html>

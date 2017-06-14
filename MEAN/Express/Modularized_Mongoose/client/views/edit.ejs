@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit Car</h1>
+        <form class="" action="/<%= car.id %>" method="post">
+            Name: <input type="text" name="name" value="<%= car.name %>">
+            Engine: <input type="text" name="engine" value="<%= car.engine %>">
+            Color: <input type="text" name="color" value="<%= car.color %>">
+            <input type="submit" name="" value="Update">
+        </form>
+</body>
+</html>
