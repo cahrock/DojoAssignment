@@ -1,0 +1,14 @@
+<fieldset *ngFor='let quote of quotes, let i = index'>
+    <legend>Quote List</legend>
+    <div class="quote">
+        <p><strong><i>{{quote.content}}</i></strong></p>- <p>{{quote.author}}</p>
+
+    </div>
+
+    <p>{{quote.count}}</p>
+    <div class="action">
+        <button type="button" (click)="countPlus(quote)" >Vote up</button>
+        <button type="button" (click)="countNeg(quote)" >Vote down</button>
+        <button type="button" (click)='onClick(i)' >Delete</button>
+    </div>
+</fieldset>

@@ -1,0 +1,14 @@
+.Container{
+    margin: auto;
+    padding: 10px;
+    width: 900px;
+    height: auto;
+    background-color: #EFEFEF;
+
+}
+.Header{width: 100%}
+.content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}

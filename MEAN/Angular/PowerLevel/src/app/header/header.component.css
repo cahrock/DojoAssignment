@@ -1,0 +1,8 @@
+.header{
+    padding: 10px;
+    width: 100%;
+    height:100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}

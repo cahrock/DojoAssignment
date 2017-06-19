@@ -1,0 +1,11 @@
+<div class="product-detail">
+    <form class="form-detail" *ngIf='product' >
+        <label for="">Id :</label> {{product.id}}<br>
+        <label for="">Product name :</label><input type="text" name="title" value="{{product.title}}"><br>
+        <label for="">Product price :</label><input type="text" name="price" value="{{product.price}}"><br>
+        <label for="">Image Url :</label><input type="text" name="imgurl" value="{{product.imgurl}}"><br>
+    </form>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+
+</div>

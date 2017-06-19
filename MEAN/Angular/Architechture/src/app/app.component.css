@@ -1,0 +1,6 @@
+.wrapper{
+    width: 900px;
+    
+    padding: 10px;
+    display: flex;  justify-content: center;flex-flow: row wrap;
+}

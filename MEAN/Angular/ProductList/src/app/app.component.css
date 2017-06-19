@@ -1,0 +1,7 @@
+.wrapper{
+    margin: auto;
+    text-align: center;
+    font-size: 15px;
+}
+.logo{margin:10px;display: inline;}
+.header{margin-bottom: 20px;font-size: 20px;}

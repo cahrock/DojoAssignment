@@ -1,0 +1,4 @@
+.quote{display: inline;width:300px;}
+p{display: inline-block; margin: 5px; padding: 10px;}
+.action{display: inline-block; margin: 10px;}
+button{display: block;text-align: center;width: 100px;margin: 5px;}

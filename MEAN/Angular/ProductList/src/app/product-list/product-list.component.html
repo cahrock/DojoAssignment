@@ -1,0 +1,11 @@
+<fieldset>
+    <legend>Product List</legend>
+    <div class="product-list"
+        *ngFor="let product of products"
+        (click)="onSelect(product)">
+        <a [routerLink]="['/products/edit', product.id]"><h3>{{product.title}}</h3></a>
+        <a [routerLink]="['/products/edit', product.id]"><img src="{{product.imgurl}}" alt=""></a>
+        <h4>Price: $<strong>{{product.price}}</strong></h4>
+    </div>
+
+</fieldset>
