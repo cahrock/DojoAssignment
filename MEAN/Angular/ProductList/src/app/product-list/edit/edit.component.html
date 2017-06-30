@@ -1,11 +1,13 @@
 <div class="product-detail">
-    <form class="form-detail" *ngIf='product' >
+    <form class="form-detail" (submit)="save()" *ngIf='product' >
         <label for="">Id :</label> {{product.id}}<br>
-        <label for="">Product name :</label><input type="text" name="title" value="{{product.title}}"><br>
-        <label for="">Product price :</label><input type="text" name="price" value="{{product.price}}"><br>
-        <label for="">Image Url :</label><input type="text" name="imgurl" value="{{product.imgurl}}"><br>
+        <label for="">Product name :</label><input type="text" name="title" [(ngModel)] ="product.title"><br>
+        <label for="">Product price :</label><input type="text" name="price" [(ngModel)] ="product.price"><br>
+        <label for="">Image Url :</label><input type="text" name="imgurl" [(ngModel)] ="product.imgurl"><br>
+        <input type="submit" name="submit" value="update">
+        <!-- <input type="submit" (click)="goBack()" name="btn_goback" value="Back"> -->
     </form>
     <button (click)="goBack()">Back</button>
-    <button (click)="save()">Save</button>
+    <!-- <button (click)="save()">Save</button> -->
 
 </div>

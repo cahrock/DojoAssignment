@@ -1,0 +1,21 @@
+<fieldset>
+    <legend>Login</legend>
+    <form (submit)='loginUser()' #registerForm='ngForm'>
+
+        <div class="input-reg">
+            <input type="text" name="email"
+            [(ngModel)]='user.email'  required placeholder="Email">
+        </div>
+        <div class="input-reg">
+            <input type="text" name="password" [(ngModel)]='user.password'  required placeholder="Password">
+        </div>
+ss
+        <div class="">
+            <button class="input-reg" type="submit" name="button" [disabled]='!registerForm.valid'>Login</button>
+        </div>
+    </form>
+
+    <div class="">
+
+    </div>
+</fieldset>

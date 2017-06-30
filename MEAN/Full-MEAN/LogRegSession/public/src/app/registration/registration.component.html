@@ -1,0 +1,42 @@
+<!-- <form (submit)="register()" #myForm="ngForm">
+  <input type="email" name="email" [(ngModel)]="user.email" required>
+  <input type="text" name="first_name" [(ngModel)]="user.first_name" required>
+  <input type="text" name="last_name" [(ngModel)]="user.last_name" required>
+  <input type="text" name="password" [(ngModel)]="user.password" required>
+  <input type="text" name="cpassword" [(ngModel)]="cpassword" required>
+  <input type="date" name="birthday" [(ngModel)]="user.birthday" required>
+  <button type="submit" [disabled]="!myForm.valid">Submit</button>
+</form> -->
+
+<fieldset>
+    <legend>Register</legend>
+    <form (submit)='registerAccount()' #registerForm='ngForm'>
+        <div class="input-reg">
+            <input type="text" name="first_name" [(ngModel)]='user.first_name'  required placeholder="First Name">
+        </div>
+        <div class="input-reg">
+            <input type="text" name="last_name"
+            [(ngModel)]='user.last_name'  required placeholder="Last Name">
+        </div>
+        <div class="input-reg">
+            <input type="text" name="email"
+            [(ngModel)]='user.email'  required placeholder="Email">
+        </div>
+        <div class="input-reg">
+            <input type="text" name="password" [(ngModel)]='user.password'  required placeholder="Password">
+        </div>
+        <div class="input-reg">
+            <input type="text" name="cpassword"  required placeholder="Confirm Password">
+        </div>
+        <div class="input-reg">
+            <input type="date" name="birthday" [(ngModel)]='user.birthday'  required placeholder="Date of Birth">
+        </div>
+        <div class="">
+            <button class="input-reg" type="submit" name="button" [disabled]='!registerForm.valid'>Register</button>
+        </div>
+    </form>
+
+    <div class="">
+
+    </div>
+</fieldset>

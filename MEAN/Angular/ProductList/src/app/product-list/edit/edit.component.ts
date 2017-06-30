@@ -27,6 +27,11 @@ export class EditComponent implements OnInit {
       .subscribe(product => this.product = product);
   }
 
+  save(): void{
+      this.productService.update(this.product)
+      .then(() => this.goBack());
+  }
+
   goBack(){
       this.location.back();
   }

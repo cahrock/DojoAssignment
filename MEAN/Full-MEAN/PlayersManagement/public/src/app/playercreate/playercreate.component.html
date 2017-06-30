@@ -1,0 +1,8 @@
+<p>
+  playercreate works!
+</p>
+<form (submit)="createPlayer()" >
+    <input type="text" name="name" [(ngModel)]="player.name" >
+    <input type="text" name="position" [(ngModel)]="player.position" >
+    <input type="submit" name="submit" value="create player">
+</form>

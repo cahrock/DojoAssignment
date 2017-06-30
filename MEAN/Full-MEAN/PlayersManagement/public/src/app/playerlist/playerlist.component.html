@@ -1,0 +1,23 @@
+<fieldset>
+    <legend><h3>Player List and Position</h3></legend>
+    <table>
+        <thead>
+            <th>Player</th>
+            <th>Prefered Position</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of players; let i=index">
+                <td>{{player.name}}</td>
+                <td>{{player.position}}</td>
+                <button (click)="deletePlayer(player._id, i)" >Delete</button>
+            </tr>
+
+            <tr *ngFor="let player of players; let i = index">
+            <td>{{player.name}}</td>
+            <td>{{player.position}}</td>
+                <button (click)="deletePlayer(player._id,i)">Delete</button>
+          </tr>
+        </tbody>
+    </table>
+</fieldset>

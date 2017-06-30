@@ -1,0 +1,9 @@
+
+  {{title}}
+  <div *ngFor="let cookie of keys">
+      <p>User: {{cookie.email}}</p>
+      <!-- <p>User cookie: {{cookies[cookie]}}</p> -->
+      <p>User id: {{cookies[cookie]}}</p>
+  </div>
+
+<button (click)="logOut()">Log Out</button>

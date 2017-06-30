@@ -1,3 +1,8 @@
-<p>
-  create works!
-</p>
+<div class="product-detail">
+    <form (submit)="add(); title.value=''; price.value=''; imgurl.value='' " name="form-product" class="form-detail" >
+        <label for="">Product name :</label><input type="text" [(ngModel)]="products.title" name="title" value=""><br>
+        <label for="">Product price :</label><input [(ngModel)]="products.price" type="text" name="price" value=""><br>
+        <label for="">Image Url :</label><input type="text" name="imgurl" value=""><br>
+        <input type="submit" [(ngModel)]="products.imgurl" name="submit" value="Create new product">
+    </form>
+</div>
