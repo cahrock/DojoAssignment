@@ -72,8 +72,8 @@ module.exports = {
         console.log('Controllers: show(id) => Question');
         var id = req.params.id
         Question.findOne({_id:id})
+        .sort('field -likes')
         .populate("answers")
-        .sort('field -createdAt')
         .exec(function(err, data){
             if(err){
                 console.log("Error inside Controllers: show(id)");
@@ -84,7 +84,6 @@ module.exports = {
                 res.json(data)
             }
         })
-
     },
 
     create_answer: function(req, res){

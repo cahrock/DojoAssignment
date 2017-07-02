@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CookieService } from 'ng2-cookies';
-import {FulwallService} from './fulwall.service'
+import {FulwallService} from './fulwall.service';
+import { ShorDescPipe } from './user/shor-desc.pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,8 @@ import { AnswerComponent } from './answer/answer.component';
     HomePageComponent,
     QuestionComponent,
     UserComponent,
-    AnswerComponent
+    AnswerComponent,
+    ShorDescPipe,
   ],
   imports: [
       BrowserModule,

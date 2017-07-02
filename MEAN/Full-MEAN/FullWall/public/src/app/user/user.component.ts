@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ShorDescPipe } from './shor-desc.pipe';
 
 import { Cookie } from 'ng2-cookies';
 import { Router } from "@angular/router";
 import { ActivatedRoute } from '@angular/router';
 import { FulwallService } from "app/fulwall.service";
+
 
 @Component({
   selector: 'app-user',
