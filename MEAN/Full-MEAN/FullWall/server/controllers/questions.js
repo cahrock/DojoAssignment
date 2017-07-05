@@ -72,7 +72,6 @@ module.exports = {
         console.log('Controllers: show(id) => Question');
         var id = req.params.id
         Question.findOne({_id:id})
-        .sort('field -likes')
         .populate("answers")
         .exec(function(err, data){
             if(err){
