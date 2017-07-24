@@ -1,0 +1,5 @@
+package com.arif.auth.models;
+
+public class UserCopy {
+
+}

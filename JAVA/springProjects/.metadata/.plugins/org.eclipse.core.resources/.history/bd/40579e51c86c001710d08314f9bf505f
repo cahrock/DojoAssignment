@@ -1,0 +1,14 @@
+package com.arif.license.services;
+
+import org.springframework.stereotype.Service;
+
+import com.arif.license.repository.LicenseRepository;
+
+@Service
+public class LicenseService {
+	private LicenseRepository licenseRepo;
+	
+	public LicenseService(){
+		
+	}
+}

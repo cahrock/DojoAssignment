@@ -1,0 +1,7 @@
+package com.arif.dojoandninja.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface DojoandninjaRepository extends CrudRepositorys<(Dojo, Long), (Ninja, Long)>{
+
+}

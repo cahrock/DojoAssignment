@@ -1,0 +1,5 @@
+package com.arif.logandreg.controllers;
+
+public class HomeController {
+
+}

@@ -1,0 +1,68 @@
+package com.arif.dojoandninja.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.arif.dojoandninja.models.Dojo;
+import com.arif.dojoandninja.models.Ninja;
+import com.arif.dojoandninja.service.DojoService;
+import com.arif.dojoandninja.service.NinjaService;
+
+@Controller
+public class HomeController {
+	private DojoService dojoService;
+	private NinjaService ninjaService;
+	
+	public HomeController(DojoService dojoService,NinjaService ninjaServic){
+		this.dojoService = dojoService;
+		this.ninjaService = ninjaService;
+	}
+	
+	@RequestMapping("")
+	public String index(){
+		
+		return "index";
+	}
+	
+	@RequestMapping("/dojos/new")
+	public String formDojo(Model model){
+		model.addAttribute("dojo", new Dojo());
+		return "new-dojo";
+	}
+	@PostMapping("/dojos/new")
+	public String createDojo(@Valid @ModelAttribute("dojo") Dojo dojo, BindingResult result){
+		if(result.hasErrors()){
+			return "/";
+		}else{
+			dojoService.createDojo(dojo);
+			return "redirect:/ninjas/new";
+		}
+	}
+	
+	@RequestMapping("/ninjas/new")
+	public String formNinja(@ModelAttribute("dojo") Dojo dojo, Model model){
+		List<Dojo> dojos = dojoService.getAll();
+		model.addAttribute("ninja", new Ninja());
+		model.addAttribute("dojos", dojoService.getAll());
+		return "new-ninja";
+	}
+//	@PostMapping("/ninjas/new")
+//	public String createNinja(@Valid @ModelAttribute("ninja") Ninja ninja,Model model, BindingResult result){
+//		if(result.hasErrors()){
+//			return "/";
+//		}else{
+//			ninjaService.createNinja(ninja);
+//			model.addAttribute("dojos", dojoService.getAll());
+//			return "redirect:/result";
+//		}
+//	}
+}

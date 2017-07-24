@@ -1,0 +1,14 @@
+package com.arif.lookify.services;
+
+import org.springframework.stereotype.Service;
+
+import com.arif.lookify.repositories.LookifyRepository;
+
+@Service
+public class LookifyService {
+	private LookifyRepository lookifyRepository;
+	
+	public LookifyService(LookifyRepository lookifyRepository){
+		this.lookifyRepository = lookifyRepository;
+	}
+}

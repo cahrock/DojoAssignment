@@ -1,0 +1,17 @@
+package com.arif.grouplanguage.services;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class LanguageService {
+	public void add(){
+		
+	}
+	public void delete(){
+		
+	}
+	
+	public void edit(){
+		
+	}
+}

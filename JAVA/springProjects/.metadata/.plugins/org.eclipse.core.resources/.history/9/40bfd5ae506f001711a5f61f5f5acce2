@@ -1,0 +1,5 @@
+package com.arif.auth.services;
+
+public class UserService {
+
+}

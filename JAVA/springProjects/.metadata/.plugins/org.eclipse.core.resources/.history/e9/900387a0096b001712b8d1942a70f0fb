@@ -1,0 +1,5 @@
+package com.arif.grouplanguage.models;
+
+public class Language {
+
+}

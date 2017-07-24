@@ -1,0 +1,60 @@
+package com.arif.lookify.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+@Table(name="lookifies")
+public class Lookify {
+	@Size(min=5, max=50)
+	private String name;
+	
+	@Size(min=5, max=20)
+	private String artist;
+	
+	@Size(min=1, max=10)
+	private double rating;
+	
+	public Lookify(){}
+	
+	public Lookify(String name, String artist, double rating){
+		this.name = name;
+		this.artist = artist;
+		this.rating = rating;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
+	
+	
+}

@@ -1,0 +1,11 @@
+package com.arif.license.services;
+
+import com.arif.license.repository.LicenseRepository;
+
+public class LicenseService {
+	private LicenseRepository licenseRepo;
+	
+	public LicenseService(){
+		
+	}
+}

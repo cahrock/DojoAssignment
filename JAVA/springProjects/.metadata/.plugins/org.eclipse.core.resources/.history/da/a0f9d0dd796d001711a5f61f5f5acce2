@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<fieldset>
+            <legend>Create Ninja</legend>
+            <form:form method="POST" action="/ninjas/new" modelAttribute="ninja">
+            	<div class="input-box">
+            		<form:label path="firstName">First Name :<form:errors path="firstName"/><form:input path="firstName"/></form:label>
+            	</div>
+			 	<div class="input-box">
+            		<form:label path="lastName">Last Name :<form:errors path="lastName"/><form:input path="lastName"/></form:label>
+            	</div>    
+			    <input type="submit" class="input-box" value="Create Dojo"/>
+			</form:form>
+                        
+	</fieldset>
+</body>
+</html>

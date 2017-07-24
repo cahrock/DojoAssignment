@@ -1,0 +1,21 @@
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Creator</th>
+    <th>Version</th>
+    <th>Action</th>
+  </tr>
+  <c:forEach items="${language}" var="language" varStatus="loop">
+  <tr>
+    <td><c:out value="${language.name}"/></td>
+    <td><c:out value="${language.creator}"/></td>
+    <td><c:out value="${language.version}"/></td>
+    <td><a href="/language/edit/${id}">Delete</a> &nbsp <a href="/language/edit/${loop.index}">Edit</a></td>
+  </tr>
+  </c:forEach>
+ 
+</table>

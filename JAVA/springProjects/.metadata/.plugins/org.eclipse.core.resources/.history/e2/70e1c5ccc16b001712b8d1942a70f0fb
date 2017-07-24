@@ -1,0 +1,15 @@
+<style>
+	.front-page{
+		margin:auto;
+		padding:20px;
+		width:50%;
+	}
+	h3{
+		margin-top:100px;
+	}
+</style>
+
+<div class="front-page">
+	<h1>Welcome to Lookify!</h1>
+	<h3>Start Looking!</h3>
+</div>

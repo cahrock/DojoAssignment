@@ -1,0 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:out value="name"></c:out>,
+<c:out value="creator"></c:out>,
+<c:out value="version"></c:out>

@@ -1,0 +1,16 @@
+package com.arif.lookify.repositories;
+
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.arif.lookify.models.Lookify;
+
+@Repository
+public interface LookifyRepository extends CrudRepository<Lookify, Long> {
+	public ArrayList<Lookify> findByArtistContaining(String search);
+	public ArrayList<Lookify> findByNameContaining(String search);
+//	List<Lookify> findByArtistOrderByRating()
+}

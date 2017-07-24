@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="firstproject"/>
+<aop-project name="portfolio"/>
+<aop-project name="books"/>
+<aop-project name="onetoone"/>
+<aop-project name="human"/>
+<aop-project name="grouplanguage"/>
+<aop-project name="license"/>
+<aop-project name="ninjagold"/>
+<aop-project name="dojoandninja"/>
+<aop-project name="auth"/>
+<aop-project name="onetomany"/>
+<aop-project name="lookify"/>
+<aop-project name="languagetwo"/>
+<aop-project name="dojosurvey"/>
+<aop-project name="thecode"/>
+<aop-project name="learningplatform"/>
+<aop-project name="manytomany"/>
+</aop-reference-model>

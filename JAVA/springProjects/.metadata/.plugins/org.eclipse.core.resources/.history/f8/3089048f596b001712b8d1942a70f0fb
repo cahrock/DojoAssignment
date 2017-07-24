@@ -1,0 +1,10 @@
+package com.arif.books.repositories;
+
+import org.springframework.stereotype.Repository;
+
+import com.arif.books.models.Book;
+
+@Repository
+public class BookRepository extends CrudRepository<Book, Long> {
+
+}

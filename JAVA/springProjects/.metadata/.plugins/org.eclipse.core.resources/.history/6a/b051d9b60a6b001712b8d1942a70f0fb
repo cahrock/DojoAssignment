@@ -1,0 +1,16 @@
+package com.arif.grouplanguage.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.arif.grouplanguage.services.LanguageService;
+
+@Controller
+@RequestMapping("/language")
+public class LanguageController {
+	private final LanguageService languageService;
+	@RequestMapping("")
+	public String language(){
+		return "language";
+	}
+}

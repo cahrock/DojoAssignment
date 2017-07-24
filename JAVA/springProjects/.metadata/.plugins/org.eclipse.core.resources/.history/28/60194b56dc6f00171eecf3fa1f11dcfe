@@ -1,0 +1,5 @@
+package com.arif.logandreg.models;
+
+public class User {
+
+}

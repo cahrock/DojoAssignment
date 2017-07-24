@@ -1,0 +1,5 @@
+package com.arif.auth.config;
+
+public class WebSecurityConfig {
+
+}

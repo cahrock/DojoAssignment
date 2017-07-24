@@ -1,0 +1,5 @@
+package com.arif.license.repository;
+
+public class PersonRepository {
+
+}

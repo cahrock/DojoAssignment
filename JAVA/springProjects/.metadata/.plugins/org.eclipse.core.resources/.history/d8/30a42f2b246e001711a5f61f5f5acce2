@@ -1,0 +1,5 @@
+package com.arif.manytomany.controllers;
+
+public class HomeController {
+
+}

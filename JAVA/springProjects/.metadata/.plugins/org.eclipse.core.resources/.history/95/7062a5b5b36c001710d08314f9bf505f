@@ -1,0 +1,5 @@
+package com.arif.license.models;
+
+public class Person {
+
+}

@@ -1,0 +1,28 @@
+package com.arif.books.controllers;
+
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.arif.books.models.Book;
+import com.arif.books.services.BookService;
+
+@Controller
+public class Books {
+    
+    private final BookService bookService;
+    public Books(BookService bookService){
+        this.bookService = bookService;
+    }
+    @RequestMapping("/books")
+    public String books() {
+        List<Book> books = bookService.allBooks();
+        model.addAttribute("books", books);
+        return "books.jsp";
+    }
+}

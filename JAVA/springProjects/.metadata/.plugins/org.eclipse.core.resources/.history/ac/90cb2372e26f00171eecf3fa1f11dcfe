@@ -1,0 +1,5 @@
+package com.arif.logandreg.config;
+
+public class WebSecurityConfig {
+
+}

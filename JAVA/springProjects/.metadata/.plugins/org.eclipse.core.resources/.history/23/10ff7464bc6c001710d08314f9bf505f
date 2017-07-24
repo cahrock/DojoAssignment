@@ -1,0 +1,11 @@
+package com.arif.license.services;
+
+import com.arif.license.repository.PersonRepository;
+
+public class PersonService {
+	private PersonRepository personRepo;
+	
+	public PersonService(PersonRepository personRepo){
+		this.personRepo = personRepo;
+	}
+}

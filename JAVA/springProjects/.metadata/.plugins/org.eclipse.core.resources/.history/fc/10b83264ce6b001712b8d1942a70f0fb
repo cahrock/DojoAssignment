@@ -1,0 +1,26 @@
+package com.arif.lookify.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.arif.lookify.models.Lookify;
+import com.arif.lookify.repositories.LookifyRepository;
+
+@Service
+public class LookifyService {
+	private LookifyRepository lookifyRepository;
+	
+	public LookifyService(LookifyRepository lookifyRepository){
+		this.lookifyRepository = lookifyRepository;
+	}
+	
+	public List<Lookify> allSongs(){
+		return lookifyRepository.findAll();
+				
+	}
+	
+	public Lookify findSongById(long id){
+		return lookifyRepository.findOne(id);
+	}
+}

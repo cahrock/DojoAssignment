@@ -1,0 +1,29 @@
+package com.arif.license.services;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.arif.license.models.Person;
+import com.arif.license.repository.LicenseRepository;
+import com.arif.license.repository.PersonRepository;
+
+@Service
+public class PersonService {
+	private PersonRepository personRepo;
+	private LicenseRepository licenseRepo;
+	
+	public PersonService(PersonRepository personRepo, LicenseRepository licenseRepo){
+		this.personRepo = personRepo;
+		this.licenseRepo = licenseRepo;
+	}
+	
+	public ArrayList<Person> getAll(){
+		return (ArrayList<Person>) personRepo.findAll();
+	}
+	
+	public void createPerson(Person person){
+		licenseRepo.save(person);
+//		personRepo.save(person);
+	}
+}

@@ -1,0 +1,33 @@
+package com.arif.logandreg.models;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name="users")
+public class User {
+	
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Size(min=2)
+	private String firstName;
+	@Size(min=2)
+	private String lastName;
+	
+	private String email;
+	@Size(min=10)
+    private String password;
+    @Transient
+    private String passwordConfirmation;
+    private Date createdAt;
+    private Date updatedAt;
+	
+	
+}

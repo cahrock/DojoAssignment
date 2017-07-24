@@ -1,0 +1,50 @@
+package com.arif.license.controllers;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.arif.license.models.Person;
+import com.arif.license.services.LicenseService;
+import com.arif.license.services.PersonService;
+
+@Controller
+public class LicenseController {
+	private LicenseService licenseService;
+	private PersonService personService;
+	
+	public LicenseController(LicenseService licenseService, PersonService person){
+		this.licenseService = licenseService;
+		this.personService = personService;
+	}
+	@RequestMapping("")
+	public String index(){
+		return "index";
+	}
+	
+	@PostMapping("/persons/new")
+	public String createPerson(@Valid @ModelAttribute("person") Person person, BindingResult result){
+		if(result.hasErrors()){
+			return "redirect:/persons/new";
+		}else{
+			licenseService.cre
+		}
+		return "new-person";
+	}
+	
+	@RequestMapping("/persons/new")
+	public String showPerson(){
+		return "new-person";
+	}
+	
+	@RequestMapping("/license/new")
+	public String licenseForm(){
+		return "new-license";
+	}
+	
+	
+}

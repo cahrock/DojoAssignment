@@ -1,0 +1,11 @@
+package com.arif.lookify.repositories;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
+
+import com.arif.lookify.models.Lookify;
+
+@Repository
+public interface LookifyRepository extends CrudRepository<Lookify, Long> {
+	 public Lookify findByArtistContaining(String search);
+}

@@ -1,0 +1,5 @@
+package com.arif.dojoandninja.models;
+
+public class Ninja {
+
+}

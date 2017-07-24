@@ -1,0 +1,26 @@
+package com.arif.grouplanguage.services;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.arif.grouplanguage.models.Language;
+
+@Service
+public class LanguageService {
+	private ArrayList<Language> languages;
+	
+	public ArrayList<Language> all(){
+		return languages;
+	}
+	public void create(){
+		
+	}
+	public void delete(){
+		
+	}
+	
+	public void update(){
+		
+	}
+}

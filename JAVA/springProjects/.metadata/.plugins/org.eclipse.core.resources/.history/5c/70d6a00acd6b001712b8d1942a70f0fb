@@ -1,0 +1,5 @@
+package com.arif.lookify.repositories;
+
+public class CrudRepository {
+
+}

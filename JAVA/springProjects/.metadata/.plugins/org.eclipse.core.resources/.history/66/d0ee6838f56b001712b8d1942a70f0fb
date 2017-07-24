@@ -1,0 +1,28 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<style>
+<!--
+	fieldset{width: 50%};
+	.input-box{margin-bottom:15px;}
+-->
+</style>
+
+
+
+<fieldset>
+            <legend>Create a new Song</legend>
+            <form:form method="POST" action="/songs/new" modelAttribute="song">
+            	<div class="input-box">
+            		<form:label path="name">Name :<form:errors path="name"/><form:input path="name"/></form:label>
+            	</div>
+			    <div class="input-box">
+			    	<form:label path="creator">Artist :<form:errors path="artist"/><form:input path="artist"/></form:label>
+			    </div>
+			    <div class="input-box">
+			    	<form:label path="version">Rating :<form:errors path="rating"/><form:input path="rating"/></form:label>
+			    </div>
+			    
+			    <input type="submit" class="input-box" value="Create Song"/>
+			</form:form>
+                        
+</fieldset>

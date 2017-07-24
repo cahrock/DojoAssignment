@@ -1,0 +1,5 @@
+package com.arif.logreg.repositories;
+
+public class UserRepository {
+
+}

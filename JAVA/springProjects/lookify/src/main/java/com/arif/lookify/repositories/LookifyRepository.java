@@ -1,0 +1,35 @@
+package com.arif.lookify.repositories;
+
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.arif.lookify.models.Lookify;
+
+@Repository
+public interface LookifyRepository extends CrudRepository<Lookify, Long> {
+	public ArrayList<Lookify> findByArtistContaining(String search);
+	public ArrayList<Lookify> findByNameContaining(String search);
+//	List<Lookify> findByArtistOrderByRating()
+	
+	// Return top 10
+	
+	public List<Lookify> findTop10ByOrderByRatingDesc();
+	
+	//Return count
+//	Long countByLastname(String lastname);
+	
+	// Delete and remove
+//	Long deleteByLastname(String lastname);
+//
+//	List<User> removeByLastname(String lastname);
+	
+//  List<Person> findByLastname(String lastname);
+	
+//	public void doSomething() {
+//	    List<Person> persons = repository.findByLastname("Matthews");
+//	  }
+}

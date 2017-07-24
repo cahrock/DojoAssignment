@@ -1,0 +1,5 @@
+package com.arif.dojoandninja.repository;
+
+public class DojoRepository {
+
+}

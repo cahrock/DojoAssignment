@@ -1,0 +1,55 @@
+package com.arif.lookify.services;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.arif.lookify.models.Lookify;
+import com.arif.lookify.repositories.LookifyRepository;
+
+@Service
+public class LookifyService {
+//	private ArrayList<Lookify> song = new ArrayList(Arrays.asList(
+//            new Lookify("More Than Word", "The Extreme", 8.0),
+//            new Lookify("Enter Sand Man", "Metalica", 9.5),
+//            new Lookify("Every Breath You Take", "The Police", 9.8)
+//            ));
+	
+	private ArrayList<Lookify> songs = new ArrayList();
+	
+	private LookifyRepository lookifyRepository;
+	
+	public LookifyService(LookifyRepository lookifyRepository){
+		this.lookifyRepository = lookifyRepository;
+	}
+	
+	public ArrayList<Lookify> all(){
+        return (ArrayList<Lookify>) lookifyRepository.findAll();
+    }
+	
+	public Lookify findSongById(long id){
+		return lookifyRepository.findOne(id);
+	}
+	
+	public void create(Lookify lookify){
+		lookifyRepository.save(lookify);
+	}
+	
+	public void update(Lookify lookify){
+		lookifyRepository.save(lookify);
+	}
+	
+	public void destroy(Long id) {
+        if (id < lookifyRepository.count()){
+        	lookifyRepository.delete(id);
+        }
+    }
+
+	public Lookify getByIndex(long id) {
+		if(id >= 0 && id < songs.size()){
+			return songs.get((int) id);
+		}else {
+			return null;
+		}
+	}
+}

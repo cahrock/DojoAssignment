@@ -1,0 +1,14 @@
+package com.arif.dojoandninja.service;
+
+import org.springframework.stereotype.Service;
+
+import com.arif.dojoandninja.repository.DojoRepository;
+
+@Service
+public class DojoService {
+	private DojoRepository dojoRepo;
+	
+	public DojoService(DojoRepository dojoRepo){
+		this.dojoRepo = dojoRepo;
+	}
+}

@@ -1,0 +1,24 @@
+package com.arif.dojoandninja.service;
+
+import org.springframework.stereotype.Service;
+
+import com.arif.dojoandninja.models.Ninja;
+import com.arif.dojoandninja.repository.NinjaRepository;
+
+@Service
+public class NinjaService {
+	private NinjaRepository ninjaRepo;
+	
+	public NinjaService(NinjaRepository ninjaRepo){
+		this.ninjaRepo = ninjaRepo;
+	}
+	
+	public void createNinja(Ninja ninja){
+		ninjaRepo.save(ninja);
+	}
+
+	public Ninja findById(Long id) {
+		// TODO Auto-generated method stub
+		return ninjaRepo.findOne(id);
+	}
+}

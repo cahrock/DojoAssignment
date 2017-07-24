@@ -1,0 +1,27 @@
+package com.arif.grouplanguage.models;
+
+public class Language {
+	private String title;
+	private String creator;
+	private double version;
+	private int numPage;
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getCreator() {
+		return creator;
+	}
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
+	public double getVersion() {
+		return version;
+	}
+	public void setVersion(double version) {
+		this.version = version;
+	}
+	
+}

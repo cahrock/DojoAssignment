@@ -1,0 +1,20 @@
+package com.arif.license.services;
+
+import org.springframework.stereotype.Service;
+
+import com.arif.license.models.Person;
+import com.arif.license.repository.PersonRepository;
+
+@Service
+public class PersonService {
+	
+	private PersonRepository personRepo;
+	
+	public PersonService(PersonRepository personRepoo){		
+		this.personRepo = personRepo;
+	}
+		
+	public void createPerson(Person person){
+		personRepo.save(person);
+	}
+}

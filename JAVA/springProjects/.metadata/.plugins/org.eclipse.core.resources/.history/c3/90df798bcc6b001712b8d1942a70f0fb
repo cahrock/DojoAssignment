@@ -1,0 +1,5 @@
+package com.arif.books.repositories;
+
+public class CrudRepository<T1, T2> {
+
+}

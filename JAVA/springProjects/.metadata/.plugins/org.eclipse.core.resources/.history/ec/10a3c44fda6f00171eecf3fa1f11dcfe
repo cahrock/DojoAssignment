@@ -1,0 +1,10 @@
+package com.arif.logandreg.controllers;
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping("")
+	public String home(){
+		return "index";
+	}
+}

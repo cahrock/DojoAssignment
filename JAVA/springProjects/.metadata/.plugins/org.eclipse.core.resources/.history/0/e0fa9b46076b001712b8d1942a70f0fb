@@ -1,0 +1,5 @@
+package com.arif.grouplanguage.services;
+
+public class LanguageService {
+
+}

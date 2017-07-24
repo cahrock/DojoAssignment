@@ -1,0 +1,10 @@
+package com.arif.grouplanguage.controllers;
+
+@Controller
+@RequestMapping("/language")
+public class LanguageController {
+	@RequestMapping("")
+	public String language(){
+		
+	}
+}

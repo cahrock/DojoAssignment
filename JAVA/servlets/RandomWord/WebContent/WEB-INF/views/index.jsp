@@ -10,9 +10,9 @@
     </head>
 <body>
 	<div class="container">
-	
+
 		<div class="wrapper">
-			
+
 			<fieldset>
 				<legend>
 					<h1>Random word</h1>
@@ -20,21 +20,22 @@
 				<h2>You have generated a random words: <c:out value="${count}"/> - times</h2>
 				<div><h2>Random word: "<c:out value="${word}"/>"</h2></div>
 				<form action="/RandomWord/index" method="get">
+                    
 					<input type="submit" value="Random word!!"/>
 				</form>
 				<div>
 					<h3>You created a random word on : <c:out value="${date}"/> </h3>
 				</div>
 			</fieldset>
-			
-			
-			
-			
+
+
+
+
 		</div>
-		
+
 	    <!-- displaying the value -->
-	    
+
 	</div>
-    
+
 </body>
 </html>

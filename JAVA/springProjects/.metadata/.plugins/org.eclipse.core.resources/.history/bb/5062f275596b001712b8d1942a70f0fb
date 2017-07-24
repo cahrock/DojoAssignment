@@ -1,0 +1,5 @@
+package com.arif.books.repositories;
+
+public class BookRepository {
+
+}

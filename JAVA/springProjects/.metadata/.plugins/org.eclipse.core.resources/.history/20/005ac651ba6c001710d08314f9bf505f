@@ -1,0 +1,15 @@
+package com.arif.license.services;
+
+import com.arif.license.repository.LicenseRepository;
+
+public class LicenseService {
+	private LicenseRepository licenseRepo;
+	
+	public LicenseService(LicenseRepository licenseRepo){
+		this.licenseRepo = licenseRepo;
+	}
+	
+	public void create(License license){
+		licenseRepo.save(license);
+	}
+}

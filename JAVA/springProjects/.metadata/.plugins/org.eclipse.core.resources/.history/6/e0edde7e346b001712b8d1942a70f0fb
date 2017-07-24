@@ -1,0 +1,7 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:out value="{name}"/>,
+<c:out value="{creator}"/>,
+<c:out value="{version}"/>
+
+<p><a href="/language/edit/${id}">Edit</a> | <a href="/language/delete/${id}">Delete</a> | <a href="/language">Dashboard</a></p>
