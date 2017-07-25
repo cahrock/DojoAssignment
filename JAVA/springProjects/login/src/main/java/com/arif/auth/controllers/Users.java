@@ -42,13 +42,23 @@ public class Users {
             return "registrationPage";
         }
         userService.saveWithUserRole(user);
+//        userService.saveUserWithAdminRole(user);
         return "redirect:/login";
+    }
+    
+    //Admin
+    @RequestMapping("/admin")
+    public String adminPage(Principal principal, Model model) {
+        String username = principal.getName();
+        model.addAttribute("currentUser", userService.findByUsername(username));
+        return "adminPage";
     }
     
     
     @RequestMapping("/login")
     public String login(@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model) {
         if(error != null) {
+//        	model.addAttribute("errorNoUser", userDetailSvc.loadUserByUsername(error));
             model.addAttribute("errorMessage", "Invalid Credentials, Please try again.");
         }
         if(logout != null) {

@@ -44,12 +44,11 @@ public class Users {
 //    }
     @PostMapping("/registration")
     public String registration(@Valid @ModelAttribute("user") User user, BindingResult result, Model model) {
-        // NEW
         userValidator.validate(user, result);
         if (result.hasErrors()) {
             return "registrationPage";
         }
-        userService.saveWithUserRole(user);
+        userService.saveUserWithAdminRole(user);
         return "redirect:/login";
     }
     
@@ -71,5 +70,12 @@ public class Users {
         String username = principal.getName();
         model.addAttribute("currentUser", userService.findByUsername(username));
         return "index";
+    }
+    
+    @RequestMapping("/admin")
+    public String adminPage(Principal principal, Model model) {
+        String username = principal.getName();
+        model.addAttribute("currentUser", userService.findByUsername(username));
+        return "adminPage";
     }
 }

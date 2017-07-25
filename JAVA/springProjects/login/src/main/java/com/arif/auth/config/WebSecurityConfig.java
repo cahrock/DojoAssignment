@@ -27,16 +27,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.
-            authorizeRequests()
-                .antMatchers("/static/**", "/registration").permitAll()
-                .anyRequest().authenticated()
-                .and()
-            .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .and()
-            .logout()
-                .permitAll();
+	        authorizeRequests()
+		        .antMatchers("/static/**", "/registration").permitAll()
+//		        .antMatchers("/admin/**").access("hasRole('ADMIN')")  // NEW
+		        .anyRequest().authenticated()
+		        .and()
+		    .formLogin()
+		        .loginPage("/login")
+		        .permitAll()
+		        .and()
+		    .logout()
+		        .permitAll();
     }
     
     // AuthenticationManagerBuilder: This method is configuring Spring Security to use our custom implementation of the UserDetailsService with Bcrypt.

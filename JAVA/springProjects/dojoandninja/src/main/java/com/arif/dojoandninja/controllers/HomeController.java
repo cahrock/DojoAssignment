@@ -64,16 +64,15 @@ public class HomeController {
 		
 		if(result.hasErrors()){
 			return "/";
-		}else{			
-			dojoService.getDojoID();
+		}else{//			
 			ninjaService.createNinja(ninja);
-			return "redirect:/result/{id}";
+			return "redirect:/result/"+(dojo.getId());
 		}
 	}
 	
 	@RequestMapping("/result/{id}")
 	public String result(@PathVariable("id") Long id, Model model){
-		model.addAttribute("dojo", ninjaService.findById(id));
-		return "result"+id;
+		model.addAttribute("dojo", dojoService.findById(id));
+		return "result";
 	}
 }

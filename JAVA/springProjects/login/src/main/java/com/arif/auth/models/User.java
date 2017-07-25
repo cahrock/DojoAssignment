@@ -14,9 +14,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name="users")
@@ -39,6 +43,10 @@ public class User {
     @Transient
     private String passwordConfirmation;
     private Date createdAt;
+    
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "updated_at")
     private Date updatedAt;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

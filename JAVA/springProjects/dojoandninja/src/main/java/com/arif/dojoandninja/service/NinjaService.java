@@ -18,7 +18,6 @@ public class NinjaService {
 	}
 
 	public Ninja findById(Long id) {
-		// TODO Auto-generated method stub
 		return ninjaRepo.findOne(id);
 	}
 }
