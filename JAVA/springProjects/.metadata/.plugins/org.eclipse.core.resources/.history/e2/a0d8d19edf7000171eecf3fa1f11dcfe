@@ -1,0 +1,12 @@
+package com.arif.manytomany.services;
+
+import com.arif.manytomany.repository.ProductRepository;
+
+public class ProductService {
+	private ProductRepository productRepo;
+	
+	public ProductService(ProductRepository productRepo){
+		this.productRepo = productRepo;
+	}
+
+}

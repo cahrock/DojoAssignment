@@ -1,0 +1,5 @@
+package com.arif.manytomany.services;
+
+public class ProductService {
+
+}

@@ -1,0 +1,11 @@
+package com.arif.auth.services;
+
+import com.arif.auth.repository.RoleRepository;
+
+public class RoleService {
+	private RoleRepository roleRepository;
+	
+	public RoleService(RoleRepository roleRepository){
+		this.roleRepository = roleRepository;
+	}
+}

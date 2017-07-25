@@ -66,7 +66,7 @@ public class LookifyController {
 	}
 	
 	@RequestMapping(value="/songs/delete/{id}")
-	public String deleteSong(@PathVariable("id") long id){
+	public String deleteSong(@PathVariable("id") Long id){
 		lookifyService.destroy(id);
 		return "redirect:/dashboard";
 	}

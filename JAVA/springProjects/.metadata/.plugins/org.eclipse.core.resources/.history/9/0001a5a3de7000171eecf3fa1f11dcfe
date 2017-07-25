@@ -1,0 +1,12 @@
+package com.arif.manytomany.services;
+
+import com.arif.manytomany.repository.CategoryRepository;
+
+public class CategoryService {
+	private CategoryRepository categoryRepo;
+	
+	public CategoryService(CategoryRepository categoryRepo){
+		this.categoryRepo = categoryRepo;
+	}
+
+}
